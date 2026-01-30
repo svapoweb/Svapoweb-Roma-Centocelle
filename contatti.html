@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - SvapoSite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+     <header>
+    <nav class="nav-container">
+        <div class="logo">
+            <a href="index.html">SVAPOWEB<span>ROMA CENTOCELLE</span></a>
+        </div>
+        
+        <ul id="main-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cose-da-sapere.html">Cose da sapere</a></li>
+            <li><a href="fake-news.html">Fake news</a></li>
+            <li><a href="svaporecensioni.html">Svaporecensioni</a></li>
+            <li><a href="dove-siamo.html">Dove siamo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+            <li><a href="extra.html">Extra</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <main class="container">
+        <h1>Contattaci</h1>
+        <p>Hai domande ? Compila il modulo qui sotto.</p>
+
+        <form id="contact-form" action="#" method="post">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="esempio@mail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="argomento">Argomento:</label>
+                <select id="argomento" name="argomento">
+                    <option value="informazioni">Informazioni generali</option>
+                    <option value="recensioni">Informazioni disponibilità articoli</option>
+                    <option value="segnalazione">Segnalazioni varie</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="messaggio">Messaggio:</label>
+                <textarea id="messaggio" name="messaggio" rows="5" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-send">Invia Messaggio</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

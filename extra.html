@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra: Calcolatore Risparmio - SvapoSite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+     <header>
+    <nav class="nav-container">
+        <div class="logo">
+            <a href="index.html">SVAPOWEB<span>ROMA CENTOCELLE</span></a>
+        </div>
+        
+        <ul id="main-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cose-da-sapere.html">Cose da sapere</a></li>
+            <li><a href="fake-news.html">Fake news</a></li>
+            <li><a href="svaporecensioni.html">Svaporecensioni</a></li>
+            <li><a href="dove-siamo.html">Dove siamo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+            <li><a href="extra.html">Extra</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <main class="container">
+        <h1>Strumenti Extra</h1>
+        <section class="calculator-box">
+            <h2>Quanto potresti risparmiare? 💰</h2>
+            <p>Inserisci i tuoi dati per vedere quanto spendi all'anno con le sigarette tradizionali.</p>
+            
+            <div class="form-group">
+                <label for="price">Prezzo medio di un pacchetto (€):</label>
+                <input type="number" id="price" value="6.00" step="0.10">
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Pacchetti consumati a settimana:</label>
+                <input type="number" id="quantity" value="7" step="1">
+            </div>
+
+            <button type="button" class="btn-send" onclick="calcolaRisparmio()">Calcola Risparmio</button>
+
+            <div id="result" class="result-area hidden">
+                <h3>Risultato:</h3>
+                <p>Spendi circa <span id="total-year" class="highlight">0</span> € all'anno in sigarette.</p>
+                <p>Passando allo svapo, potresti risparmiare oltre il 60% di questa cifra!</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
