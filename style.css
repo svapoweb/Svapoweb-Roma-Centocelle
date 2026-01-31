@@ -436,5 +436,39 @@ nav ul {
     }
 
 }
+/* Layout per le pagine di approfondimento */
+.detail-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--sw-dark, #222831);
+}
+
+.highlight-box {
+    background-color: #f0f4f8;
+    border-left: 6px solid #3498db;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+.content-section h2 {
+    color: var(--colore-accento, #FF8C00);
+    margin-top: 25px;
+}
+
+.cta-box {
+    background: var(--sw-dark, #222831);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 40px;
+}
+
+.cta-box h3 {
+    color: var(--colore-accento, #FF8C00);
+    margin-bottom: 10px;
+}
 
 
