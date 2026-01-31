@@ -1,11 +1,14 @@
 /* 1. DEFINIZIONE DEI COLORI (Cambia qui per cambiare tutto il sito) */
 :root {
-    --colore-primario: #222831;    /* Grigio molto scuro (quasi nero) per contrasto */
-    --colore-accento: #FF8C00;     /* DarkOrange: il nostro colore protagonista */
-    --colore-accento-hover: #E67E22; /* Un arancione più scuro per gli effetti hover */
-    --colore-sfondo: #F7F7F7;      /* Grigio chiarissimo per lo sfondo */
-    --colore-testo: #393E46;       /* Grigio scuro per la leggibilità */
-    --colore-card: #ffffff;        /* Bianco puro per le schede */
+    --sw-orange: #ff6600; /* Arancione ufficiale Svapoweb */
+    --sw-dark: #1a1a1a;   /* Nero fumo di sfondo */
+    --accent-orange: #FF8C00; /* Il tuo arancione vibrante per i pulsanti */
+}
+
+/* Applica il tuo arancione ai pulsanti del sito ufficiale */
+.btn-primary, .shop-now, .contact-submit {
+    background-color: var(--accent-orange) !important;
+    border-radius: 12px; /* Il tuo arrotondamento preferito */
 }
 
 /* 2. APPLICAZIONE DEI COLORI */
@@ -428,4 +431,5 @@ nav ul {
         flex-wrap: wrap; /* Permette ai link di andare a capo se non ci stanno */
         justify-content: center;
     }
+
 }
