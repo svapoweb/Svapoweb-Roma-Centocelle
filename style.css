@@ -62,7 +62,7 @@ nav ul {
     padding: 0;
 }
 
-nav ul li { margin: 0 12px; }
+nav ul li { margin: 0 11px; }
 
 nav ul li a {
     color: white;
@@ -568,3 +568,52 @@ nav a {
 nav ul li a {
     font-size: 12px;
 }
+/* Contenitore principale */
+.servizio-vetrina {
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+    background-color: #fcfcfc;
+}
+
+.immagine-box {
+    max-width: 800px; /* Evita che l'immagine diventi troppo enorme su schermi grandi */
+    width: 100%;
+    text-align: center; /* Centra il testo sotto l'immagine */
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.img-servizio {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.testo-sotto {
+    padding: 25px;
+    background-color: white;
+}
+
+.testo-sotto h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.testo-sotto p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+.testo-sopra {
+    padding: 12px;
+    background-color: white;
+    }
+   /* Centra tutti i testi dentro il tag main della pagina servizi */
+main {
+    text-align: center;
+} 
+   
