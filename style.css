@@ -62,7 +62,7 @@ nav ul {
     padding: 0;
 }
 
-nav ul li { margin: 0 15px; }
+nav ul li { margin: 0 12px; }
 
 nav ul li a {
     color: white;
@@ -513,5 +513,58 @@ button:hover {
     filter: brightness(1.2);
     border: 2px solid #ff6600;
 }
+.servizi-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
 
+.servizio-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
 
+.servizio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.servizi-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.servizio-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.servizio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+/* Questo agisce direttamente sui link del menu */
+nav a {
+    font-size: 12px; /* Prova 14px o 13px per renderlo più piccolo */
+    font-weight: 500; /* Opzionale: riduci il peso se sembra troppo "pesante" */
+    text-transform: uppercase; /* Se vuoi tenerlo in maiuscolo */
+}
+
+/* Se il tuo menu usa una lista, agisci sui list items */
+nav ul li a {
+    font-size: 12px;
+}
