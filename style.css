@@ -470,5 +470,22 @@ nav ul {
     color: var(--colore-accento, #FF8C00);
     margin-bottom: 10px;
 }
+/* Effetto "Svapoweb" al passaggio del mouse sulle card */
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff6600 !important;
+    box-shadow: 0 5px 20px rgba(255, 102, 0, 0.2);
+}
+
+/* Migliora i campi del modulo quando vengono cliccati */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ff6600 !important;
+}
+
+button:hover {
+    background: #e65c00 !important;
+    transform: scale(1.02);
+}
 
 
