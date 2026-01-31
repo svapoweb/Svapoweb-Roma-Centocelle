@@ -332,7 +332,7 @@ input:focus, textarea:focus {
     /* Il percorso dice: "entra nella cartella img e prendi il file sfondo-hero.jpg" */
     background: linear-gradient(45deg, rgba(255, 140, 0, 0.7), rgba(34, 40, 49, 0.7)), 
                 url('img/sfondo-hero.jpg') no-repeat center center/cover;
-    height: 600px;
+    height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -436,4 +436,5 @@ nav ul {
     }
 
 }
+
 
