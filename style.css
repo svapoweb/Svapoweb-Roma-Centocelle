@@ -487,5 +487,16 @@ button:hover {
     background: #e65c00 !important;
     transform: scale(1.02);
 }
+/* Rimuove la sottolineatura da tutte le card cliccabili */
+.card-link, .card-link:hover, .card-link:focus {
+    text-decoration: none !important;
+    color: inherit; /* Mantiene il colore originale del testo senza farlo diventare blu */
+    display: block;
+}
+
+/* Assicura che anche i titoli dentro la card non vengano sottolineati */
+.card-link h3, .card-link p {
+    text-decoration: none;
+}
 
 
