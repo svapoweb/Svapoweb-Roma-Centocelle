@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novità e Gallery - Svapoweb Roma Centocelle</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Svapoweb Logo" class="logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="section" style="background: #111; padding: 60px 0 20px 0;">
+            <div class="container" style="text-align: center;">
+                <h1 style="color: #ff6600; font-size: 2.5rem;">Novità dallo Store</h1>
+                <p style="color: #ccc;">Scopri gli ultimi arrivi e gli eventi a Centocelle</p>
+            </div>
+        </section>
+
+        <section class="section" style="padding: 40px 0;">
+            <div class="container">
+                
+                <div class="content-block" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 60px;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h2 style="color: #ff6600;">Nuovi Arrivi: Settimana 31 Gennaio</h2>
+                        <p style="color: #fff; line-height: 1.8;">
+                            Sono finalmente disponibili le nuove pod mod di ultima generazione. 
+                            Passa a trovarci in Via dei Castani per provarle dal vivo e scoprire tutte le colorazioni disponibili.
+                        </p>
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <img src="images/nuovo-prodotto.jpg" alt="Descrizione Foto" style="width: 100%; border-radius: 15px; border: 2px solid #333; box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+                    </div>
+                </div>
+
+                <hr style="border: 0; border-top: 1px solid #333; margin: 40px 0;">
+
+                <h2 style="color: #ff6600; text-align: center; margin-bottom: 30px;">Gallery Negozio</h2>
+                <div class="photo-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <img src="images/foto1.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                    <img src="images/foto2.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                    <img src="images/foto3.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="background: #000; padding: 40px 0; border-top: 2px solid #ff6600; margin-top: 50px;">
+        <div class="container" style="text-align: center; color: #fff;">
+            <p>&copy; 2026 Svapoweb Roma Centocelle | Via dei Castani, 183</p>
+            <div class="back-home" style="margin-top: 20px;">
+                <a href="index.html" style="color: #ff6600; text-decoration: none; font-weight: bold;">← Torna alla Home</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
