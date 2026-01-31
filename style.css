@@ -498,5 +498,10 @@ button:hover {
 .card-link h3, .card-link p {
     text-decoration: none;
 }
+.card-link:hover .info-card {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
 
