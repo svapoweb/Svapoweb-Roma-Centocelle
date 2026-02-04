@@ -324,7 +324,7 @@ input:focus, textarea:focus {
 .highlight {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #27ae60;
+    color: #000000;
 }
 
 /* Stili per la Home Page */
@@ -616,4 +616,92 @@ nav ul li a {
 main {
     text-align: center;
 } 
-   
+/* Rimuove la sottolineatura e il colore blu dai link delle box */
+.box-link {
+    text-decoration: none;
+    color: inherit; /* Mantiene i colori originali del testo */
+    display: block; /* Fa sì che tutta l'area sia cliccabile */
+    margin-bottom: 10px;
+}
+
+/* Effetto al passaggio del mouse (Hover) */
+.box-informativa {
+    transition: all 0.3s ease; /* Rende il movimento fluido */
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.box-link:hover .box-informativa {
+    transform: translateY(-5px); /* La box si alza leggermente */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Aggiunge un'ombra */
+    border-color: hsl(39, 100%, 50%); /* Opzionale: cambia il colore del bordo (es. rosso Svapoweb) */
+}
+
+.leggi-di-piu {
+    display: inline-block;
+    margin-top: 10px;
+    color: hsl(39, 100%, 50%); /* Rosso Svapoweb */
+    font-weight: bold;
+}  
+/* Il contenitore che comanda la riga */
+.griglia-info {
+    display: flex;
+    flex-wrap: wrap;      /* Permette alle box di andare a capo su mobile */
+    gap: 15px;            /* Spazio tra le box */
+    justify-content: center; /* Centra le box nella riga */
+    padding: 20px;
+    max-width: 1000px;    /* Larghezza totale della riga */
+    margin: 0 auto;       /* Centra tutta la griglia nella pagina */
+}
+
+/* Stile della singola box ridotta */
+.box-link {
+    text-decoration: none;
+    color: inherit;
+    flex: 1 1 280px;      /* La box cerca di stare sui 280px */
+    max-width: 300px;     /* Non si allarga oltre i 300px */
+}
+
+.box-informativa {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;        /* Padding ridotto per rendere la box più piccola */
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;         /* Fa sì che tutte le box siano alte uguali */
+}
+
+/* Effetto al passaggio del mouse */
+.box-link:hover .box-informativa {
+    transform: translateY(-5px);
+    border-color: #ff0000; /* Rosso Svapoweb */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.box-informativa h3 {
+    font-size: 1.1rem;    /* Titolo più compatto */
+    margin: 10px 0;
+    color: #333;
+}
+
+.box-informativa p {
+    font-size: 0.9rem;    /* Testo più piccolo */
+    color: #666;
+    line-height: 1.4;
+}
+/* Stile per le icone delle box */
+.icona-svapo {
+    font-size: 2rem;       /* Dimensione dell'icona */
+    color: #ff0000;        /* Rosso Svapoweb (cambia il codice se ne usi un altro) */
+    margin-bottom: 15px;   /* Spazio tra icona e titolo */
+    display: block;        /* Serve per centrarla bene sopra il titolo */
+}
+
+/* Effetto figo: l'icona cambia colore quando passi il mouse sulla box */
+.box-link:hover .icona-svapo {
+    color: #cc0000;        /* Un rosso più scuro al passaggio del mouse */
+    transform: scale(1.1); /* L'icona si ingrandisce leggermente */
+    transition: all 0.3s ease;
+}
