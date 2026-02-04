@@ -120,5 +120,45 @@
     </main>
 
     <script src="script.js"></script>
+    <script>
+function calcolaLiquidoAvanzato() {
+    // Recupero Valori
+    const V_tot = parseFloat(document.getElementById('total_volume').value);
+    const N_target = parseFloat(document.getElementById('target_nic').value);
+    const A_perc = parseFloat(document.getElementById('aroma_perc').value);
+    const N_booster = parseFloat(document.getElementById('booster_strength').value);
+    const Ratio_VG = parseFloat(document.getElementById('target_ratio').value) / 100;
+
+    // 1. Calcolo ml Aroma
+    const ml_aroma = (V_tot * A_perc) / 100;
+
+    // 2. Calcolo ml Nicotina (Basette)
+    const ml_nic = (N_target * V_tot) / N_booster;
+
+    // 3. Calcolo Glicerina (VG) necessaria
+    const ml_vg_target = V_tot * Ratio_VG;
+    // Nota: Le basette di solito sono 50/50 o 70/30. 
+    // Per semplicità qui assumiamo basette 50/50 e aroma in PG.
+    const ml_vg = ml_vg_target; 
+
+    // 4. Calcolo Glicole (PG) a riempimento
+    const ml_pg = V_tot - ml_vg - ml_nic - ml_aroma;
+
+    // Controllo errori
+    if (ml_pg < 0) {
+        alert("Attenzione: La somma di Nicotina e Aroma supera la quota di Glicole disponibile per questo rapporto VG/PG. Riduci la nicotina o aumenta il VG.");
+        return;
+    }
+
+    // Visualizzazione Risultati
+    document.getElementById('res-aroma').innerText = ml_aroma.toFixed(1) + " ml";
+    document.getElementById('res-nic').innerText = ml_nic.toFixed(1) + " ml (" + (ml_nic/10).toFixed(1) + " basette)";
+    document.getElementById('res-vg').innerText = ml_vg.toFixed(1) + " ml";
+    document.getElementById('res-pg').innerText = ml_pg.toFixed(1) + " ml";
+    document.getElementById('res-total').innerText = V_tot;
+    
+    document.getElementById('results-box').style.backgroundColor = "#fff9f0";
+}
+</script>
 </body>
 </html>
