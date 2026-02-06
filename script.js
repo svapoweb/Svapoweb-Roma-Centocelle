@@ -49,3 +49,40 @@ document.addEventListener("DOMContentLoaded", function () {
         menu.classList.toggle("active");
     });
 });
+const hamburger = document.getElementById('hamburger');
+const mainMenu = document.getElementById('main-menu');
+
+// Apre e chiude il menù al click
+hamburger.addEventListener('click', () => {
+    mainMenu.classList.toggle('active');
+    
+    // Opzionale: trasforma le barre in una "X" quando è aperto
+    hamburger.classList.toggle('open');
+});
+
+// Chiude il menù se si clicca fuori (consigliato per UX)
+document.addEventListener('click', (event) => {
+    if (!hamburger.contains(event.target) && !mainMenu.contains(event.target)) {
+        mainMenu.classList.remove('active');
+    }
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const mainMenu = document.getElementById('main-menu');
+
+    if (hamburger && mainMenu) {
+        hamburger.addEventListener('click', (e) => {
+            // Impedisce al click di propagarsi al documento
+            e.stopPropagation(); 
+            mainMenu.classList.toggle('active');
+            hamburger.classList.toggle('open');
+            console.log("Menu cliccato!"); // Verifica nella console del browser (F12)
+        });
+    }
+
+    // Chiude il menu se clicchi ovunque fuori dal menu stesso
+    document.addEventListener('click', () => {
+        mainMenu.classList.remove('active');
+        hamburger.classList.remove('open');
+    });
+});
