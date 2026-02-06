@@ -1,6 +1,6 @@
 /* 1. DEFINIZIONE DEI COLORI (Cambia qui per cambiare tutto il sito) */
 :root {
-    --colore-primario: #222831;    /* Grigio molto scuro (quasi nero) per contrasto */
+    --colore-primario: #353434;    /* Grigio molto scuro (quasi nero) per contrasto */
     --colore-accento: #FF8C00;     /* DarkOrange: il nostro colore protagonista */
     --colore-accento-hover: #E67E22; /* Un arancione più scuro per gli effetti hover */
     --colore-sfondo: #F7F7F7;      /* Grigio chiarissimo per lo sfondo */
@@ -21,7 +21,7 @@ body {
 }
 
 header, footer {
-    background-color: var(--colore-primario) !important;
+    background-color: #222 !important;
 }
 
 nav ul li a.active, nav ul li a:hover {
@@ -50,7 +50,7 @@ body {
 }
 
 header {
-    background: #2c3e50;
+    background: #222;
     padding: 1rem;
 }
 
@@ -376,7 +376,7 @@ input:focus, textarea:focus {
 }
 
 .home-card h3 {
-    color: #2c3e50;
+    color: #222;
 }
 
 .home-card a {
@@ -386,7 +386,7 @@ input:focus, textarea:focus {
 }
 
 footer {
-    background: #2c3e50;
+    background: #222;
     color: white;
     text-align: center;
     padding: 20px;
@@ -819,12 +819,12 @@ main {
 
 .box-text h3 {
     margin-top: 0;
-    color: #333;
+    color: #222;
     font-size: 1.5rem;
 }
 
 .box-text p {
-    color: #666;
+    color: #222;
     line-height: 1.6;
 }
 
@@ -884,7 +884,7 @@ main {
     font-size: 0.9rem;
     font-weight: bold;
     margin-bottom: 5px;
-    color: #444;
+    color: #222;
 }
 
 .input-field input, .input-field select {
@@ -964,7 +964,7 @@ main {
     left: -300px;
     width: 280px;
     height: 100vh;
-    background: #111;
+    background: #222;
     list-style: none;
     padding: 80px 20px;
     display: flex;
@@ -1044,7 +1044,7 @@ main {
     top: 0;
     width: 250px;
     height: 100vh;
-    background-color: #333;
+    background-color: #222;
     flex-direction: column;
     padding-top: 80px;
     transition: 0.4s;
@@ -1133,4 +1133,17 @@ main {
 
 .menu li a:hover {
     color: orange;
+}
+/* Cambia il colore dell'header */
+header {
+    background-color: #222; /* Sostituisci con il tuo colore (es. Blu Scuro) */
+    color: white;              /* Cambia il colore del testo se necessario */
+}
+
+/* Cambia il colore del footer */
+footer {
+    background-color: #222; /* Sostituisci con il tuo colore (es. Nero/Grigio) */
+    color: #ffffff;
+    padding: 20px 0;           /* Opzionale: aggiunge spazio interno */
+    text-align: center;
 }
