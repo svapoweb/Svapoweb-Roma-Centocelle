@@ -41,3 +41,11 @@ function calcolaRisparmio() {
         alert("Per favore, inserisci valori validi.");
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("main-menu");
+
+    hamburger.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+});
