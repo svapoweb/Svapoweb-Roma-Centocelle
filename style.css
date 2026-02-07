@@ -1028,15 +1028,6 @@ main {
     z-index: 1001;
 }
 
-/* Le tre linee arancioni */
-.bar {
-    width: 100%;
-    height: 3px;
-    background-color: #FF8C00; /* Arancione intenso */
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
 /* Stile Menu (Nascosto di default a sinistra) */
 .menu {
     position: fixed;
@@ -1057,16 +1048,6 @@ main {
     left: 0; /* Mostra il menu */
 }
 
-/* Animazione Hamburger quando aperto (trasforma in X) */
-.hamburger.active .bar:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-.hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-}
-.hamburger.active .bar:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
 /* NAV */
 .nav-container {
     display: flex;
@@ -1089,9 +1070,9 @@ main {
 
 /* Linee arancioni */
 .hamburger .bar {
-    height: 3px;
+    height: 7px;
     width: 100%;
-    background-color: orange;
+    background-color: rgb(255, 167, 4);
     border-radius: 2px;
     transition: all 0.3s ease;
 }
@@ -1132,7 +1113,7 @@ main {
 }
 
 .menu li a:hover {
-    color: orange;
+    color: rgb(248, 163, 5);
 }
 /* Cambia il colore dell'header */
 header {
@@ -1175,13 +1156,6 @@ footer {
     padding: 5px;
 }
 
-.bar {
-    width: 30px;
-    height: 3px;
-    background-color: #222; /* Cambia colore se l'header è scuro */
-    transition: 0.3s;
-}
-
 /* 2. Nascondi il menù di default e trasformalo in un pannello laterale o a comparsa */
 .menu {
     display: none; /* Nascondo il menù standard */
@@ -1213,4 +1187,170 @@ footer {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
+}
+/* Assicurati che l'hamburger sia visibile e cliccabile */
+.hamburger {
+    display: flex !important; /* Forza visibilità */
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+}
+
+/* Stile menu laterale */
+.menu {
+    display: flex !important; /* Deve essere flex per mostrare i link */
+    position: fixed;
+    top: 0;
+    right: -100%; /* Nascosto a destra */
+    width: 280px;
+    height: 100vh;
+    background-color: #222;
+    flex-direction: column;
+    padding-top: 80px;
+    transition: right 0.4s ease-in-out;
+    z-index: 1000;
+}
+
+/* Quando il menu è attivo (sia desktop che mobile) */
+.menu.active {
+    right: 0 !important;
+}
+
+/* Il menu deve essere visibile quando ha la classe .active */
+.menu.active {
+    display: flex !important;
+    right: 0 !important; /* Lo porta dentro lo schermo */
+}
+
+/* Assicurati che le linee dell'hamburger siano visibili (arancioni) */
+.hamburger .bar {
+    background-color: #FF8C00 !important;
+    display: block;
+    width: 30px;
+    height: 7px;
+    margin: 3px 0;
+}
+/* Forza il colore arancione Svapoweb su tutte le barre */
+header .hamburger .bar {
+    background-color: #FF8C00 !important; /* Arancione acceso */
+    display: block !important;
+    width: 30px;
+    height: 7px;
+    margin: 3px 0;
+    opacity: 1 !important;
+}
+
+/* Assicurati che non diventino scure al passaggio del mouse */
+header .hamburger:hover .bar {
+    background-color: #FF8C00 !important;
+}
+/* Rendi visibile l'hamburger */
+.hamburger {
+    display: flex !important; /* Forza la visibilità */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1100;
+    position: relative;
+}
+
+/* Forza il colore ARANCIONE sulle barre */
+.hamburger .bar {
+    width: 30px;
+    height: 7px;
+    background-color: #FF8C00 !important; /* Arancione Svapoweb */
+    margin: 5px 0;
+    display: block !important;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Fix per il menù che deve apparire */
+.menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Nascosto a destra */
+    width: 250px;
+    height: 100vh;
+    background-color: #1a1a1a;
+    padding-top: 80px;
+    transition: 0.4s;
+    z-index: 1000;
+}
+
+.menu.active {
+    right: 0 !important; /* Entra nello schermo */
+}
+/* --- Stile Tabella Allineata al Modulo --- */
+.foto-info-container {
+    margin: 10px 0;
+    width: 50%; /* Occupa tutto lo spazio del contenitore padre */
+    box-sizing: border-box;
+}
+
+.tabella-contatti {
+    width: 100%; /* Forza la tabella a espandersi come il form */
+    border-collapse: separate;
+    border-spacing: 20px 15px; 
+    table-layout: fixed; /* Aiuta a mantenere le proporzioni costanti */
+}
+
+.tabella-contatti td {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    vertical-align: middle;
+    text-align: center;      /* Centra il testo e le immagini orizzontalmente */
+    border: 1px solid #eee; /* Leggero bordo per uniformità con gli input */
+}
+
+/* Assicurati che le colonne abbiano una distribuzione equa */
+.cella-foto {
+    width: 35%; /* Spazio per l'immagine */
+}
+
+.cella-testo {
+    width: 35%; /* Spazio per il testo */
+}
+
+.img-tabella {
+    width: 70%;
+    max-width: 250px; /* Leggermente più grande per riempire meglio */
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    border: 2px solid var(--colore-accento);
+}
+/* --- Centratura Tabella e Allineamento --- */
+.foto-info-container {
+    margin: 40px auto;      /* Lo zero (o 40px) sopra/sotto e 'auto' ai lati centra l'elemento */
+    width: 100%;            /* Occupa tutto lo spazio disponibile */
+    max-width: 900px;       /* Stessa larghezza massima del container del modulo */
+    display: block;         /* Assicura che si comporti come un blocco centrabile */
+    box-sizing: border-box; /* Include padding e bordi nel calcolo della larghezza */
+}
+
+.tabella-contatti {
+    width: 100%;            /* La tabella si espande per coprire tutti i 900px */
+    border-collapse: separate;
+    border-spacing: 0 15px; 
+    margin: 0 auto;         /* Ulteriore garanzia di centratura interna */
+}
+
+/* Miglioramento dell'aspetto delle celle */
+.tabella-contatti td {
+    padding: 25px;          /* Più respiro al contenuto */
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Ombra leggermente più profonda per farla risaltare */
+    border: 1px solid #e0e0e0;
+}
+.cella-testo h3 {
+    color: #FF8C00; /* L'arancione tipico di Svapoweb */
 }
