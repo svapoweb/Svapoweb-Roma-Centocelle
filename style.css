@@ -1354,3 +1354,44 @@ header .hamburger:hover .bar {
 .cella-testo h3 {
     color: #FF8C00; /* L'arancione tipico di Svapoweb */
 }
+.btn-chiudi {
+    background-color: #FF8C00; /* Arancione Svapoweb */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-chiudi:hover {
+    background-color: #e67e00;
+}
+/* Contenitore per centrare il pulsante */
+.container-chiudi {
+    text-align: center;    /* Centra il pulsante orizzontalmente */
+    margin-top: 30px;      /* Spazio tra la tabella e il pulsante */
+    margin-bottom: 50px;   /* Spazio dal fondo della pagina */
+    width: 100%;           /* Occupa tutta la larghezza per permettere la centratura */
+}
+
+/* Stile del pulsante (migliorato) */
+.btn-chiudi {
+    background-color: #FF8C00; /* Arancione Svapoweb */
+    color: white;
+    border: none;
+    padding: 15px 30px;    /* Leggermente più grande per facilitare il clic */
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    display: inline-block; /* Necessario per text-align: center */
+}
+
+.btn-chiudi:hover {
+    background-color: #E67E22; /* Effetto hover più scuro */
+    transform: scale(1.05);    /* Leggero ingrandimento al passaggio del mouse */
+}
