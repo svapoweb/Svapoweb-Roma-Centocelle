@@ -1395,3 +1395,69 @@ header .hamburger:hover .bar {
     background-color: #E67E22; /* Effetto hover più scuro */
     transform: scale(1.05);    /* Leggero ingrandimento al passaggio del mouse */
 }
+.info-box {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center;     /* Centra verticalmente */
+    text-align: left;        /* Mantiene il testo allineato a sinistra (più leggibile) */
+    padding: 30px;
+    background-color: #ffffff; /* O il colore che preferisci */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-height: 200px;       /* Opzionale: dà un'altezza minima alla box */
+}
+
+.info-content p {
+    margin: 20px 0;          /* Spazio tra una riga e l'altra */
+    gap: 10px;              /* Crea spazio tra l'emoji e il testo */
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+.info-box {
+    display: flex;
+    align-items: center;    /* Centra verticalmente contenuto e immagine */
+    gap: 30px;              /* Spazio tra la foto e il testo */
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 800px;       /* Larghezza massima della box */
+    margin: 20px auto;      /* Centra la box nella pagina */
+}
+
+.info-image {
+    flex: 1;                /* La colonna dell'immagine prende spazio */
+    max-width: 300px;       /* Larghezza massima della foto */
+}
+
+.info-image img {
+    width: 100%;            /* Adatta la foto al contenitore */
+    height: auto;
+    border-radius: 10px;    /* Arrotonda leggermente i bordi della foto */
+    display: block;
+}
+
+.info-content {
+    flex: 1.5;              /* La colonna del testo è leggermente più larga */
+    text-align: left;
+}
+
+.info-content p {
+    margin: 16px 0;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* RENDI RESPONSIVE PER MOBILE */
+@media (max-width: 768px) {
+    .info-box {
+        flex-direction: column; /* Su mobile, la foto va sopra e il testo sotto */
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .info-image {
+        max-width: 100%;    /* La foto prende tutta la larghezza su mobile */
+    }
+}
