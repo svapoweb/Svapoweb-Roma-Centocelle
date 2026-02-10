@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informazioni - Svapoweb Roma Centocelle</title>
+    <title>Cose da Sapere - Svapoweb Roma Centocelle</title>
     <style>
-        /* Reset e base coerenti con il resto del sito */
+        /* Reset e base (Uguali alla precedente) */
         * {
             margin: 0;
             padding: 0;
@@ -40,11 +40,11 @@
         .logo-placeholder {
             width: 60px;
             height: 60px;
-            background-color: #fff;
+            background-color: #fff; /* Sostituisci con il tuo logo */
             border-radius: 50%;
         }
 
-        h1.site-title {
+        h1 {
             font-size: 1.8rem;
             text-transform: uppercase;
         }
@@ -52,14 +52,16 @@
         .text-white { color: #ffffff; }
         .text-orange { color: #ff6600; }
 
-        /* Menu di Navigazione */
+
+        /* Menu Hamburger */
         nav {
             background-color: #1a1a1a;
             width: 100%;
             position: relative;
             z-index: 1000;
         }
-/* --- STILE MENU UNIFORMATO (Standard index.html) --- */
+
+        /* --- STILE MENU UNIFORMATO (Standard index.html) --- */
 nav {
     background-color: #1a1a1a;
     width: 100%;
@@ -148,9 +150,9 @@ nav {
 
         #menu-btn:checked ~ .menu { display: block; }
 
-        /* Contenuto Principale con Box Info (stile news.html/cose-da-sapere.html) */
+        /* Contenuto Dinamico (dal file allegato) */
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -161,72 +163,65 @@ nav {
         }
 
         .page-header h2 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
+            font-size: 2.5rem;
             color: #222;
+            margin-bottom: 10px;
         }
 
-        /* Griglia dei Box Informativi */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+        .intro {
+            font-size: 1.2rem;
+            color: #666;
         }
 
         .info-card {
             background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-            border-top: 4px solid #ff6600;
+            align-items: flex-start;
+            gap: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         .info-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 2rem;
             background: #fff0e6;
-            padding: 15px;
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 10px;
+            border-radius: 12px;
         }
 
-        .info-card h3 {
-            color: #000;
-            margin-bottom: 15px;
+        .info-text h3 {
+            color: #ff6600;
+            margin-bottom: 10px;
             font-size: 1.4rem;
         }
 
-        .info-card p {
-            color: #666;
-            margin-bottom: 20px;
-            font-size: 1rem;
+        .info-text ul {
+            list-style: none;
+            margin-top: 10px;
         }
 
-        .btn-link {
-            background-color: #ff6600;
-            color: white;
-            padding: 10px 25px;
-            text-decoration: none;
+        .info-text li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .info-text li::before {
+            content: "•";
+            color: #ff6600;
             font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s;
+            position: absolute;
+            left: 0;
         }
 
-        .btn-link:hover {
-            background-color: #e65c00;
+        .pro-tip {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
         }
 
         /* Footer */
@@ -279,31 +274,74 @@ nav {
 
     <main class="container">
         <div class="page-header">
-            <h2>Area Informativa</h2>
-            <p>Esplora le sezioni del nostro portale per scoprire tutto sul mondo dello svapo.</p>
+            <h2>Guida per Principianti</h2>
+            <p class="intro">Tutto quello che devi conoscere prima di iniziare o per migliorare la tua esperienza.</p>
         </div>
 
-        <div class="info-grid">
-            <div class="info-card">
-                <div class="info-icon">💧</div>
-                <h3>I Nostri Liquidi</h3>
-                <p>Scopri una vasta gamma di aromi, basi e liquidi pronti delle migliori marche certificate.</p>
-                <a href="liquidi.html" class="btn-link">Scopri di più</a>
+        <article class="info-card">
+            <div class="info-icon">💧</div>
+            <div class="info-text">
+                <h3>Composizione dei Liquidi</h3>
+                <p>I liquidi sono composti da Glicole Propilenico (PG) e Glicerina Vegetale (VG). Il PG porta l'aroma e il "colpo in gola", mentre il VG produce il vapore.</p>
             </div>
+        </article>
 
-            <div class="info-card">
-                <div class="info-icon">🛠️</div>
-                <h3>Hardware & Kit</h3>
-                <p>Dalle Pod Mod ai sistemi avanzati, abbiamo il dispositivo perfetto per ogni tipo di svapatore.</p>
-                <a href="hardware.html" class="btn-link">Guida hardware</a>
+        <article class="info-card">
+            <div class="info-icon">🔋</div>
+            <div class="info-text">
+                <h3>Manutenzione della Batteria</h3>
+                <p>Non lasciare mai le batterie al sole o in auto in estate. Usa sempre caricatori idonei e controlla che l'involucro esterno (wrap) sia integro.</p>
             </div>
+        </article>
 
-            <div class="info-card">
-                <div class="info-icon">📑</div>
-                <h3>Servizi in Negozio</h3>
-                <p>Offriamo servizi e consulenze per smettere di fumare e iniziare lo svapo in modo sicuro e personalizzato.</p>
-                <a href="percorso.html" class="btn-link">Vedi servizi</a>
+        <article class="info-card">
+            <div class="info-icon">☁️</div>
+            <div class="info-text">
+                <h3>Resistenze (Coil)</h3>
+                <p>La resistenza va cambiata regolarmente (ogni 20-30ml di liquido circa). Se senti sapore di bruciato, è ora di sostituirla!</p>
             </div>
+        </article>
+
+        <div class="pro-tip">
+            <strong>💡 Pro Tip:</strong> Quando installi una resistenza nuova, versa qualche goccia di liquido direttamente sul cotone e attendi 5 minuti prima di svapare.
+        </div>
+
+        <article class="info-card">
+            <div class="info-icon">🛠️</div>
+            <div class="info-text">
+                <h3>Scegliere il dispositivo giusto (Hardware)</h3>
+                <ul>
+                    <li><strong>Pod Mod:</strong> Piccole, leggere e automatiche. Ideali per chi cerca semplicità.</li>
+                    <li><strong>Starter Kit (Pen style):</strong> A forma di penna con serbatoio ricaricabile e più autonomia.</li>
+                    <li><strong>Box Mod:</strong> Dispositivi potenti che richiedono settaggi manuali (consigliate per utenti esperti).</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="info-card">
+            <div class="info-icon">🎯</div>
+            <div class="info-text">
+                <h3>Il Liquido e la Nicotina</h3>
+                <ul>
+                    <li><strong>Livello di Nicotina:</strong> Se fumi molto, parti da un livello medio-alto (9mg/ml o 12mg/ml) per non sentire la mancanza della sigaretta.</li>
+                    <li><strong>Sali di Nicotina:</strong> Ideali per le Pod Mod, permettono alte dosi senza fastidio alla gola.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="info-card">
+            <div class="info-icon">🌬️</div>
+            <div class="info-text">
+                <h3>Tiro di Guancia (MTL) vs Polmone (DL)</h3>
+                <ul>
+                    <li><strong>Tiro di Guancia (MTL):</strong> Simile alla sigaretta tradizionale. È la scelta consigliata per iniziare.</li>
+                    <li><strong>Tiro di Polmone (DL):</strong> Grandi nuvole di vapore, sensazione molto diversa dal tabacco.</li>
+                </ul>
+            </div>
+        </article>
+
+        <div class="pro-tip">
+            <strong>💡 Pro Tip:</strong> Non scoraggiarti se tossisci ai primi tiri: il vapore è più "umido" del fumo di tabacco. È del tutto normale e passa dopo i primi due giorni.
         </div>
     </main>
 

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guida ai Liquidi - Svapoweb Roma Centocelle</title>
+    <title>Guida Hardware - Svapoweb Roma Centocelle</title>
     <style>
-        /* Reset e base coerenti con index.html */
+        /* Reset e base coerenti con il sito */
         * {
             margin: 0;
             padding: 0;
@@ -112,33 +112,52 @@
             margin-bottom: 10px;
         }
 
-        /* Griglia Box Liquidi */
-        .liquidi-grid {
+        /* Griglia Box Hardware */
+        .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 25px;
             margin-bottom: 50px;
         }
 
-        /* AGGIORNATO: Animazione al passaggio del mouse */
         .info-card {
             background: white;
             border-radius: 10px;
             padding: 25px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border-top: 4px solid #333;
-            transition: transform 0.3s, border-top 0.3s, box-shadow 0.3s; /* Transizione fluida */
+            transition: transform 0.3s;
         }
 
         .info-card:hover {
-            transform: translateY(-8px); /* Muove la box verso l'alto */
-            border-top: 4px solid #ff6600; /* Il bordo diventa arancione */
-            box-shadow: 0 12px 25px rgba(0,0,0,0.1); /* Ombra più profonda */
+            transform: translateY(-5px);
+            border-top: 4px solid #ff6600;
         }
 
         .info-card h3 {
             color: #ff6600;
             margin-bottom: 15px;
+        }
+
+        .info-card p { margin-bottom: 10px; }
+
+        .info-card ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .info-card li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .info-card li::before {
+            content: "•";
+            color: #ff6600;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
         }
 
         /* Tabella Riassuntiva */
@@ -149,6 +168,11 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             overflow-x: auto;
             margin-bottom: 40px;
+        }
+
+        .table-container h3 {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         table {
@@ -232,79 +256,98 @@
 
     <main class="container">
         <div class="page-header">
-            <h2>Guida ai Liquidi</h2>
-            <p>Trova il sapore perfetto per la tua esperienza di svapo.</p>
+            <h2>Tipologie di Hardware</h2>
+            <p>Scegli il dispositivo più adatto al tuo stile di svapo.</p>
         </div>
 
-        <div class="liquidi-grid">
+        <div class="grid-layout">
             <div class="info-card">
-                <h3>🍂 1. Tabaccosi</h3>
-                <p>Scelta classica per chi inizia o per chi ama il tabacco dopo il caffè.</p>
-                <p><strong>Ideali per:</strong> Tiro di guancia (MTL).</p>
+                <h3>📱 1. Pod Mod (Le più popolari)</h3>
+                <p>Dispositivi piccoli, compatti e spesso automatici. L'evoluzione moderna dello svapo.</p>
+                <ul>
+                    <li><strong>Caratteristiche:</strong> Spesso senza tasti, utilizzano cartucce (Pod) intercambiabili.</li>
+                    <li><strong>Vantaggi:</strong> Facili da usare, leggere, ideali per Sali di Nicotina.</li>
+                    <li><strong>Ideali per:</strong> Chi cerca discrezione e un tiro simile alla sigaretta (MTL).</li>
+                </ul>
             </div>
+
             <div class="info-card">
-                <h3>🍰 2. Cremosi</h3>
-                <p>Dolci, torte e creme. Molto appaganti, perfetti per il relax.</p>
-                <p><strong>Ideali per:</strong> Guancia e Polmone.</p>
+                <h3>🔋 2. Starter Kit (Tubo o Box)</h3>
+                <p>Sistemi completi con batteria e atomizzatore a testine sostituibili.</p>
+                <ul>
+                    <li><strong>Caratteristiche:</strong> Più autonomia e regolazione della potenza (Watt) e dell'aria.</li>
+                    <li><strong>Vantaggi:</strong> Maggiore personalizzazione del tiro (chiuso o aperto).</li>
+                    <li><strong>Ideali per:</strong> Chi vuole performance che durino tutto il giorno.</li>
+                </ul>
             </div>
+
             <div class="info-card">
-                <h3>🍎 3. Fruttati</h3>
-                <p>Gusti freschi e naturali come mango o frutti di bosco.</p>
-                <p><strong>Ideali per:</strong> Uso "all-day" quotidiano.</p>
+                <h3>💨 3. Box Mod (Sistemi Avanzati)</h3>
+                <p>Il mondo dei "nuvoloni". Dispositivi potenti con batterie esterne.</p>
+                <ul>
+                    <li><strong>Caratteristiche:</strong> Schermi a colori, chip evoluti e potenze fino a 200W.</li>
+                    <li><strong>Vantaggi:</strong> Durata eccellente e massima versatilità con ogni atomizzatore.</li>
+                    <li><strong>Ideali per:</strong> Chi ama il tiro di polmone (DL) e tanto vapore.</li>
+                </ul>
             </div>
+
             <div class="info-card">
-                <h3>❄️ 4. Fruttati Ghiacciati (Ice)</h3>
-                <p>Base fruttata con una sensazione di freddo intenso in gola.</p>
-                <p><strong>Ideali per:</strong> Amanti delle sigarette usa e getta.</p>
+                <h3>🛠️ 4. Sistemi Rigenerabili (RDA/RTA)</h3>
+                <p>Il livello per esperti. La resistenza si costruisce a mano con filo e cotone.</p>
+                <ul>
+                    <li><strong>Caratteristiche:</strong> Richiedono manualità e conoscenza della legge di Ohm.</li>
+                    <li><strong>Vantaggi:</strong> Resa aromatica imbattibile e costi di gestione bassissimi.</li>
+                    <li><strong>Ideali per:</strong> Chi cerca il massimo sapore e ama il fai-da-te.</li>
+                </ul>
             </div>
         </div>
 
         <div class="table-container">
-            <h3>Riassunto per la scelta</h3>
+            <h3>🔍 Confronto Rapido: Quale scegliere?</h3>
             <table>
                 <thead>
                     <tr>
-                        <th>Categoria</th>
-                        <th>Gusto Principale</th>
-                        <th>Sensazione</th>
-                        <th>Quando sceglierlo</th>
+                        <th>Tipo Hardware</th>
+                        <th>Facilità d'uso</th>
+                        <th>Produzione Vapore</th>
+                        <th>Portabilità</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Tabaccosi</strong></td>
-                        <td>Legno, cenere, secco</td>
-                        <td>Simile al fumo</td>
-                        <td>Per smettere di fumare</td>
+                        <td><strong>Pod Mod</strong></td>
+                        <td>⭐⭐⭐⭐⭐</td>
+                        <td>Bassa</td>
+                        <td>Eccellente</td>
                     </tr>
                     <tr>
-                        <td><strong>Cremosi</strong></td>
-                        <td>Burro, latte, zucchero</td>
-                        <td>Avvolgente e dolce</td>
-                        <td>Per momenti di relax</td>
+                        <td><strong>Starter Kit</strong></td>
+                        <td>⭐⭐⭐⭐</td>
+                        <td>Media</td>
+                        <td>Buona</td>
                     </tr>
                     <tr>
-                        <td><strong>Fruttati</strong></td>
-                        <td>Frutta fresca</td>
-                        <td>Naturale e leggera</td>
-                        <td>Uso quotidiano</td>
+                        <td><strong>Box Mod</strong></td>
+                        <td>⭐⭐</td>
+                        <td>Alta</td>
+                        <td>Media</td>
                     </tr>
                     <tr>
-                        <td><strong>Ghiacciati</strong></td>
-                        <td>Frutta + Freddo</td>
-                        <td>Shock termico</td>
-                        <td>Se ami le usa e getta</td>
+                        <td><strong>Rigenerabili</strong></td>
+                        <td>⭐</td>
+                        <td>Altissima</td>
+                        <td>Variabile</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <section class="pro-tip-box">
-            <h4>💡 Un ultimo consiglio tecnico:</h4>
-            <p>Oltre al gusto, controlla sempre la <strong>composizione (VG/PG)</strong> che trovi anche nel calcolatore della nostra pagina <a href="extra.html" style="color: #ff6600; text-decoration: none; font-weight: bold;">Extra</a>:</p>
+            <h4>💡 Un consiglio tecnico per non sbagliare:</h4>
+            <p>Quando scegli l'hardware, guarda sempre il valore della <strong>Resistenza (Ohm)</strong>:</p>
             <ul style="list-style: none; margin-top: 10px;">
-                <li>➔ <strong>50/50:</strong> Perfetto per Pod Mod e tiro di guancia (liquido più fluido).</li>
-                <li>➔ <strong>70/30 o superiore:</strong> Perfetto per il tiro di polmone (nuvole grandi e sapore più dolce).</li>
+                <li style="margin-bottom: 8px;">➔ <strong>Sopra 1.0 Ohm:</strong> Tiro chiuso, poco vapore, perfetto per smettere di fumare (Guancia).</li>
+                <li>➔ <strong>Sotto 0.5 Ohm (Sub-Ohm):</strong> Tiro aperto, tanto vapore, consuma più liquido (Polmone).</li>
             </ul>
         </section>
     </main>

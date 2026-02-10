@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strumenti Extra - Svapoweb Roma Centocelle</title>
+    <style>
+        /* Reset e base coerenti con il sito */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            font-size: 0.90rem;
+        }
+
+        /* Header */
+        header {
+            background-color: #000;
+            padding: 1rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        h1.site-title {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+
+        .text-white { color: #ffffff; }
+        .text-orange { color: #ff6600; }
+
+        /* Menu Uniformato */
+        nav {
+            background-color: #1a1a1a;
+            width: 100%;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .menu-toggle { display: none; }
+
+        .hamburger {
+            display: block;
+            padding: 15px;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+            background: #222;
+        }
+
+        .menu {
+            display: none;
+            list-style: none;
+            width: 100%;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            transition: 0.3s;
+            border-bottom: 1px solid #333;
+        }
+
+        .menu li a:hover { background-color: #ff6600; }
+
+        #menu-btn:checked ~ .menu { display: block; }
+
+        /* Layout Contenuti */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #222;
+        }
+
+        /* Box Calcolatori */
+        .calculator-box, .vape-calc-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        h2 { color: #ff6600; margin-bottom: 20px; text-align: center; }
+        
+        /* Form Risparmio */
+        .form-group { margin-bottom: 15px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+
+        .btn-send, .btn-calculate {
+            width: 100%;
+            background-color: #ff6600;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .btn-send:hover, .btn-calculate:hover { background-color: #e65c00; }
+
+        .result-area {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #fff5ee;
+            border-left: 5px solid #ff6600;
+            border-radius: 5px;
+        }
+
+        .hidden { display: none; }
+        .highlight { font-size: 1.4rem; font-weight: bold; color: #ff6600; }
+
+        /* Grid Calcolatore Liquidi */
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+        .input-field { margin-bottom: 15px; }
+        .input-field label { display: block; font-size: 0.85rem; margin-bottom: 5px; font-weight: bold; }
+        .input-field input, .input-field select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+
+        .calc-results { background: #222; color: #fff; padding: 25px; border-radius: 8px; }
+        .calc-results h3 { color: #ff6600; border-bottom: 1px solid #444; padding-bottom: 10px; margin-bottom: 15px; }
+        .result-item { display: flex; justify-content: space-between; margin-bottom: 12px; padding-bottom: 5px; border-bottom: 1px dotted #444; }
+        .result-item strong { color: #ff6600; }
+        
+        .total-bar { margin-top: 20px; text-align: center; font-weight: bold; background: #333; padding: 10px; border: 1px solid #ff6600; border-radius: 5px; }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: #ff6600;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Desktop */
+        @media (min-width: 992px) {
+            .hamburger { display: none; }
+            .menu { display: flex !important; justify-content: center; }
+            .menu li a { border: none; padding: 15px 25px; }
+        }
+
+        @media (max-width: 768px) {
+            .calc-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="Logo" class="logo-placeholder">
+            <h1 class="site-title">
+                <span class="text-white">SVAPOWEB</span> 
+                <span class="text-orange">ROMA CENTOCELLE</span>
+            </h1>
+        </div>
+    </header>
+
+    <nav>
+        <input type="checkbox" id="menu-btn" class="menu-toggle">
+        <label for="menu-btn" class="hamburger">☰ MENU</label>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cose-da-sapere.html">Cose da sapere</a></li>
+            <li><a href="fake-news.html">Fake news</a></li>
+            <li><a href="extra.html">Extra</a></li>
+            <li><a href="servizi-admiral.html">Servizi Admiral Pay</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="dove-siamo.html">Dove siamo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1 class="main-title">Strumenti Extra</h1>
+
+        <section class="calculator-box">
+            <h2>Quanto potresti risparmiare? 💰</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #666;">Inserisci i tuoi dati per vedere quanto spendi all'anno con le sigarette tradizionali.</p>
+            
+            <div class="form-group">
+                <label for="price">Prezzo medio di un pacchetto (€):</label>
+                <input type="number" id="price" value="6.00" step="0.10">
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Pacchetti consumati a settimana:</label>
+                <input type="number" id="quantity" value="7" step="1">
+            </div>
+
+            <button type="button" class="btn-send" onclick="calcolaRisparmio()">Calcola Risparmio</button>
+
+            <div id="result" class="result-area hidden">
+                <h3>Risultato:</h3>
+                <p>Spendi circa <span id="total-year" class="highlight">0</span> € all'anno in sigarette.</p>
+                <p>Passando allo svapo, potresti risparmiare oltre il 60% di questa cifra!</p>
+            </div>
+        </section>
+
+        <section class="vape-calc-container">
+            <h2 class="calc-title">Calcolatore Liquido Fai-da-Te</h2>
+            
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-field">
+                        <label>Quantità totale da ottenere (ml)</label>
+                        <input type="number" id="total_volume" value="100">
+                    </div>
+                    
+                    <div class="input-field">
+                        <label>Nicotina finale desiderata (mg/ml)</label>
+                        <input type="number" id="target_nic" value="3" step="0.1">
+                    </div>
+
+                    <div class="input-field">
+                        <label>Percentuale Aroma (%)</label>
+                        <input type="number" id="aroma_perc" value="10">
+                    </div>
+
+                    <div class="input-field">
+                        <label>Composizione desiderata (VG/PG)</label>
+                        <select id="target_ratio">
+                            <option value="50">50/50 (Guancia)</option>
+                            <option value="70">70/30 (Polmone)</option>
+                            <option value="80">80/20 (Cloud)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Forza Basetta Nicotina (mg/ml)</label>
+                        <input type="number" id="booster_strength" value="20">
+                    </div>
+
+                    <button onclick="calcolaLiquidoAvanzato()" class="btn-calculate">CALCOLA RICETTA</button>
+                </div>
+
+                <div class="calc-results" id="results-box">
+                    <h3>La tua Ricetta:</h3>
+                    <div class="result-item">
+                        <span>Aroma:</span>
+                        <strong id="res-aroma">-</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>Nicotina (Basette):</span>
+                        <strong id="res-nic">-</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>Glicerina Vegetale (VG):</span>
+                        <strong id="res-vg">-</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>Glicole Propilenico (PG):</span>
+                        <strong id="res-pg">-</strong>
+                    </div>
+                    <div class="total-bar">
+                        Volume Totale: <span id="res-total">100</span> ml
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>@Svapoweb Roma Centocelle - Il portale per il tuo svapo</p>
+    </footer>
+
+    <script>
+        // Funzione Risparmio
+        function calcolaRisparmio() {
+            const price = document.getElementById('price').value;
+            const quantity = document.getElementById('quantity').value;
+            const totalYear = (price * quantity * 52).toFixed(2);
+            
+            document.getElementById('total-year').innerText = totalYear;
+            document.getElementById('result').classList.remove('hidden');
+        }
+
+        // Funzione Calcolatore Liquidi
+        function calcolaLiquidoAvanzato() {
+            const totalVol = parseFloat(document.getElementById('total_volume').value);
+            const targetNic = parseFloat(document.getElementById('target_nic').value);
+            const aromaPerc = parseFloat(document.getElementById('aroma_perc').value);
+            const boosterStr = parseFloat(document.getElementById('booster_strength').value);
+            const ratio = parseFloat(document.getElementById('target_ratio').value);
+
+            const mlAroma = (totalVol * aromaPerc) / 100;
+            const mlNic = (targetNic * totalVol) / boosterStr;
+            const mlVG = (totalVol * ratio) / 100;
+            const mlPG = totalVol - mlAroma - mlNic - mlVG;
+
+            document.getElementById('res-aroma').innerText = mlAroma.toFixed(1) + " ml";
+            document.getElementById('res-nic').innerText = mlNic.toFixed(1) + " ml (" + (mlNic/10).toFixed(1) + " basette)";
+            document.getElementById('res-vg').innerText = mlVG.toFixed(1) + " ml";
+            document.getElementById('res-pg').innerText = (mlPG > 0 ? mlPG.toFixed(1) : "0.0") + " ml";
+            document.getElementById('res-total').innerText = totalVol;
+        }
+    </script>
+</body>
+</html>

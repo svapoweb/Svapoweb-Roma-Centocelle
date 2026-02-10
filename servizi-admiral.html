@@ -3,57 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Svapoweb Roma Centocelle - La tua guida nel mondo dello svapo</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Servizi Admiral Pay - Svapoweb Roma Centocelle</title>
+    <style>
+        /* Reset e base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            font-size: 0.92rem; /* Font ridotto come richiesto precedentemente */
+        }
+
+        /* Header */
+        header {
+            background-color: #000;
+            padding: 1rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        h1.site-title {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+
+        .text-white { color: #ffffff; }
+        .text-orange { color: #ff6600; }
+
+        /* Menu */
+        nav {
+            background-color: #1a1a1a;
+            width: 100%;
+        }
+/* --- STILE MENU UNIFORMATO (Standard index.html) --- */
+nav {
+    background-color: #1a1a1a;
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+}
+
+.menu-toggle { display: none; }
+
+.hamburger {
+    display: block;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    background: #222;
+}
+
+.menu {
+    display: none;
+    list-style: none;
+    width: 100%;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.90rem; /* Font size coerente */
+    font-weight: bold;
+    transition: 0.3s;
+    border-bottom: 1px solid #333;
+}
+
+.menu li a:hover {
+    background-color: #ff6600;
+}
+
+#menu-btn:checked ~ .menu { display: block; }
+
+/* Desktop View (sopra i 992px) */
+@media (min-width: 992px) {
+    .hamburger { display: none; }
+    .menu {
+        display: flex !important;
+        justify-content: center;
+    }
+    .menu li { border: none; }
+    .menu li a {
+        border-bottom: none;
+        padding: 15px 25px;
+    }
+}
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: 0.3s;
+        }
+
+        .menu li a:hover { background-color: #ff6600; }
+
+        /* Contenuto Admiral Pay */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .admiral-banner {
+            background: linear-gradient(45deg, #000, #333);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 5px solid #ff6600;
+        }
+
+        /* Stile per l'immagine cliccabile */
+        .image-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .img-preview {
+            max-width: 300px; /* Dimensione piccola in pagina */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 2px solid #ff6600;
+        }
+
+        .img-preview:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(255, 102, 0, 0.3);
+        }
+
+        .img-caption {
+            display: block;
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Griglia Servizi */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .service-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+        
+        .service-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+
+        footer {
+            background-color: #000;
+            color: #ff6600;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 992px) {
+            .menu { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-    <nav class="nav-container">
-        <div class="hamburger" id="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="Logo" class="logo-placeholder">
+            <h1 class="site-title">
+                <span class="text-white">SVAPOWEB</span> 
+                <span class="text-orange">ROMA CENTOCELLE</span>
+            </h1>
         </div>
+    </header>
 
-         <div class="logo">
-            <a href="index.html">SVAPOWEB<span><span>ROMA CENTOCELLE</span></a>
-        </div>
-        </div>
-
-        <ul id="main-menu" class="menu">
+    <nav>
+        <ul class="menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="cose-da-sapere.html">Cose da sapere</a></li>
             <li><a href="fake-news.html">Fake news</a></li>
+            <li><a href="extra.html">Extra</a></li>
+            <li><a href="servizi-admiral.html">Servizi Admiral Pay</a></li>
             <li><a href="news.html">News</a></li>
             <li><a href="dove-siamo.html">Dove siamo</a></li>
             <li><a href="contatti.html">Contatti</a></li>
-            <li><a href="extra.html">Extra</a></li>
-            <li><a href="servizi-admiral.html">Servizi Admiral Pay</a></li>
         </ul>
     </nav>
-</header>
-<main class="container">
-    <div class="testo-sopra"></div>
-    <h1>Servizi Admiral Pay presso Svapoweb Centocelle</h1>
-    </main>
-<section class="servizio-vetrina">
-    <div class="immagine-box">
-        <img src="img/servizi-admiral.webp" alt="Punto Admiral Pay Svapoweb Centocelle" class="img-servizio">
-        
-        <div class="testo-sotto">
-            <h3>Il nostro punto servizi</h3>
-            <p>
-                Siamo un centro autorizzato <strong>Admiral Pay</strong>. Oltre a trovare i migliori prodotti per lo svapo, 
-                da noi puoi pagare comodamente le tue utenze, ricaricare il cellulare o acquistare gift card, 
-                il tutto in un ambiente accogliente e professionale.
-            </p>
-        </div>
-    </div>
-</section>
-    <script src="script.js"></script>
-</body>
 
+    <main class="container">
+        <div class="admiral-banner">
+            <h2>Punto Servizi Admiral Pay</h2>
+            <p>Non solo svapo! Da noi puoi gestire i tuoi pagamenti in modo veloce e sicuro.</p>
+        </div>
+
+        <div class="image-container">
+            <a href="img/servizi-admiral.webp" target="_blank">
+                <img src="img/servizi-admiral.webp" alt="Tabella Servizi Admiral Pay" class="img-preview">
+            </a>
+            <span class="img-caption">Clicca sull'immagine per ingrandirla</span>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">📄</span>
+                <h3>Pagamento Bollettini</h3>
+                <p>Bollettini postali (bianchi e premarcati), MAV e RAV.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🏛️</span>
+                <h3>PagoPA</h3>
+                <p>Tasse, mense scolastiche, multe e ticket sanitari.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">📱</span>
+                <h3>Ricariche</h3>
+                <p>Telefoniche, internazionali e PayTV (Sky, DAZN).</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🎟️</span>
+                <h3>Gift Card</h3>
+                <p>Amazon, Netflix, PlayStation, Xbox e molti altri.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>@Svapoweb Roma Centocelle - Il portale per il tuo svapo</p>
+    </footer>
+
+</body>
 </html>
-   

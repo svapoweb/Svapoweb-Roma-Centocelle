@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Svapoweb Roma Centocelle</title>
+    <title>Dove Siamo - Svapoweb Roma Centocelle</title>
     <style>
-        /* Reset base */
+        /* Reset e base (Coerenti con cose-da-sapere.html) */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            font-size: 0.92rem; /* Font leggermente rimpicciolito come richiesto */
         }
 
         /* Header */
@@ -46,13 +53,15 @@
         .text-white { color: #ffffff; }
         .text-orange { color: #ff6600; }
 
-        /* Menu Hamburger Responsive */
+        /* Menu Hamburger */
         nav {
             background-color: #1a1a1a;
             width: 100%;
             position: relative;
+            z-index: 1000;
         }
-/* --- STILE MENU UNIFORMATO (Standard index.html) --- */
+
+        /* --- STILE MENU UNIFORMATO (Standard index.html) --- */
 nav {
     background-color: #1a1a1a;
     width: 100%;
@@ -109,9 +118,7 @@ nav {
         padding: 15px 25px;
     }
 }
-        .menu-toggle {
-            display: none;
-        }
+        .menu-toggle { display: none; }
 
         .hamburger {
             display: block;
@@ -129,10 +136,6 @@ nav {
             width: 100%;
         }
 
-        .menu li {
-            border-bottom: 1px solid #333;
-        }
-
         .menu li a {
             display: block;
             padding: 15px;
@@ -140,42 +143,84 @@ nav {
             text-decoration: none;
             text-align: center;
             transition: 0.3s;
+            border-bottom: 1px solid #333;
         }
 
-        .menu li a:hover {
-            background-color: #ff6600;
+        .menu li a:hover { background-color: #ff6600; }
+
+        #menu-btn:checked ~ .menu { display: block; }
+
+        /* Contenuto Pagina */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        /* Logica apertura menu su mobile */
-        #menu-btn:checked ~ .menu {
-            display: block;
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
-        /* Hero Section (Parte Centrale) */
-        .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('img/panoramica_negozio.webp') no-repeat center center/cover;
+        .page-header h2 {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        /* Info Card Style */
+        .info-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        .btn-inizia {
-            background-color: #ff6600;
-            color: white;
-            padding: 18px 40px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            transition: transform 0.3s, background-color 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        .info-icon {
+            font-size: 2rem;
+            background: #fff0e6;
+            padding: 10px;
+            border-radius: 12px;
         }
 
-        .btn-inizia:hover {
-            background-color: #e65c00;
-            transform: scale(1.1);
+        .info-text h3 {
+            color: #ff6600;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        /* Orari List */
+        .hours-list {
+            list-style: none;
+            width: 100%;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hours-list li:last-child { border-bottom: none; }
+
+        /* Map Style */
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-top: 25px;
+            height: 400px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         /* Footer */
@@ -184,19 +229,17 @@ nav {
             color: #ff6600;
             padding: 2rem;
             text-align: center;
-            font-size: 0.9rem;
+            margin-top: 50px;
         }
 
-        /* Desktop View */
+        /* Desktop Adjustment */
         @media (min-width: 992px) {
             .hamburger { display: none; }
             .menu {
                 display: flex !important;
                 justify-content: center;
             }
-            .menu li {
-                border: none;
-            }
+            .menu li a { border: none; padding: 15px 25px; }
         }
     </style>
 </head>
@@ -205,7 +248,7 @@ nav {
     <header>
         <div class="logo-container">
             <img src="img/logo.jpeg" alt="Logo" class="logo-placeholder">
-            <h1>
+            <h1 class="site-title">
                 <span class="text-white">SVAPOWEB</span> 
                 <span class="text-orange">ROMA CENTOCELLE</span>
             </h1>
@@ -228,8 +271,43 @@ nav {
         </ul>
     </nav>
 
-    <main class="hero">
-        <a href="cose-da-sapere.html" class="btn-inizia">Inizia qui</a>
+    <main class="container">
+        <div class="page-header">
+            <h2>Dove Siamo</h2>
+            <p class="intro">Vieni a trovarci in negozio per scoprire tutte le novità del mondo svapo.</p>
+        </div>
+
+        <article class="info-card">
+            <div class="info-icon">🕒</div>
+            <div class="info-text" style="width: 100%;">
+                <h3>Orari di Apertura</h3>
+                <ul class="hours-list">
+                    <li><strong>Lunedì:</strong> <span>16:00 - 20:00</span></li>
+                    <li><strong>Martedì - Sabato:</strong> <span>09:30 - 12:30 / 16:00 - 20:00</span></li>
+                    <li><strong>Domenica:</strong> <span style="color: #d9534f; font-weight: bold;">Chiuso</span></li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="info-card">
+            <div class="info-icon">📍</div>
+            <div class="info-text">
+                <h3>Recapiti</h3>
+                <p><strong>Indirizzo:</strong> Via delle Ninfèe, 29 - 00172 Roma</p>
+                <p><strong>Telefono Fisso:</strong> 06 97994018</p>
+                <p><strong>WhatsApp:</strong> +39 378 0643043</p>
+                <p><strong>Email:</strong> info@svapowebcentocelle.it</p>
+            </div>
+        </article>
+
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.123456789!2d12.5606622!3d41.8844888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6226164f8997%3A0x705f42654030673e!2sVia%20delle%20Ninf%C3%A8e%2C%2029%2C%2000172%20Roma%20RM!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
     </main>
 
     <footer>

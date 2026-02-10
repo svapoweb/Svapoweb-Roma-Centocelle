@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informazioni - Svapoweb Roma Centocelle</title>
+    <title>Percorso Smetti di Fumare - Svapoweb Roma Centocelle</title>
     <style>
-        /* Reset e base coerenti con il resto del sito */
+        /* Reset e base coerenti */
         * {
             margin: 0;
             padding: 0;
@@ -17,6 +17,7 @@
             background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
+            font-size: 0.90rem;
         }
 
         /* Header */
@@ -52,70 +53,14 @@
         .text-white { color: #ffffff; }
         .text-orange { color: #ff6600; }
 
-        /* Menu di Navigazione */
+        /* Menu */
         nav {
             background-color: #1a1a1a;
             width: 100%;
             position: relative;
             z-index: 1000;
         }
-/* --- STILE MENU UNIFORMATO (Standard index.html) --- */
-nav {
-    background-color: #1a1a1a;
-    width: 100%;
-    position: relative;
-    z-index: 1000;
-}
 
-.menu-toggle { display: none; }
-
-.hamburger {
-    display: block;
-    padding: 15px;
-    color: white;
-    cursor: pointer;
-    text-align: center;
-    font-weight: bold;
-    background: #222;
-}
-
-.menu {
-    display: none;
-    list-style: none;
-    width: 100%;
-}
-
-.menu li a {
-    display: block;
-    padding: 15px;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    font-size: 0.90rem; /* Font size coerente */
-    font-weight: bold;
-    transition: 0.3s;
-    border-bottom: 1px solid #333;
-}
-
-.menu li a:hover {
-    background-color: #ff6600;
-}
-
-#menu-btn:checked ~ .menu { display: block; }
-
-/* Desktop View (sopra i 992px) */
-@media (min-width: 992px) {
-    .hamburger { display: none; }
-    .menu {
-        display: flex !important;
-        justify-content: center;
-    }
-    .menu li { border: none; }
-    .menu li a {
-        border-bottom: none;
-        padding: 15px 25px;
-    }
-}
         .menu-toggle { display: none; }
 
         .hamburger {
@@ -140,6 +85,7 @@ nav {
             color: white;
             text-decoration: none;
             text-align: center;
+            font-weight: bold;
             transition: 0.3s;
             border-bottom: 1px solid #333;
         }
@@ -148,7 +94,7 @@ nav {
 
         #menu-btn:checked ~ .menu { display: block; }
 
-        /* Contenuto Principale con Box Info (stile news.html/cose-da-sapere.html) */
+        /* Contenuto Principale */
         .container {
             max-width: 1000px;
             margin: 40px auto;
@@ -162,71 +108,88 @@ nav {
 
         .page-header h2 {
             font-size: 2.2rem;
-            margin-bottom: 10px;
             color: #222;
+            margin-bottom: 10px;
         }
 
-        /* Griglia dei Box Informativi */
-        .info-grid {
+        /* Box Percorso */
+        .percorso-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
+            margin-bottom: 50px;
         }
 
-        .info-card {
+        .step-card {
             background: white;
             border-radius: 10px;
-            padding: 30px;
+            padding: 25px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+            border-top: 4px solid #333;
             transition: transform 0.3s;
+            position: relative;
         }
 
-        .info-card:hover {
+        .step-card:hover {
             transform: translateY(-5px);
             border-top: 4px solid #ff6600;
         }
 
-        .info-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            background: #fff0e6;
-            padding: 15px;
+        .step-number {
+            background: #ff6600;
+            color: white;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
-            width: 80px;
-            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .info-card h3 {
-            color: #000;
+            font-weight: bold;
             margin-bottom: 15px;
-            font-size: 1.4rem;
         }
 
-        .info-card p {
-            color: #666;
-            margin-bottom: 20px;
-            font-size: 1rem;
+        .step-card h3 {
+            color: #222;
+            margin-bottom: 15px;
         }
 
-        .btn-link {
+        /* Sezione CTA (Call to Action) */
+        .cta-section {
+            background-color: #000;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ff6600;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .btn-consulenza {
+            display: inline-block;
             background-color: #ff6600;
             color: white;
-            padding: 10px 25px;
+            padding: 15px 35px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            text-transform: uppercase;
         }
 
-        .btn-link:hover {
+        .btn-consulenza:hover {
             background-color: #e65c00;
+            transform: scale(1.05);
         }
 
         /* Footer */
@@ -264,47 +227,53 @@ nav {
     <nav>
         <input type="checkbox" id="menu-btn" class="menu-toggle">
         <label for="menu-btn" class="hamburger">☰ MENU</label>
-        
         <ul class="menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="cose-da-sapere.html">Cose da sapere</a></li>
-            <li><a href="fake-news.html">Fake news</a></li>
-            <li><a href="extra.html">Extra</a></li>
-            <li><a href="servizi-admiral.html">Servizi Admiral Pay</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="dove-siamo.html">Dove siamo</a></li>
+            <li><a href="liquidi.html">Guida Liquidi</a></li>
+            <li><a href="hardware.html">Guida Hardware</a></li>
+            <li><a href="news.html" >Torna alle news</a></li>
             <li><a href="contatti.html">Contatti</a></li>
         </ul>
     </nav>
 
     <main class="container">
         <div class="page-header">
-            <h2>Area Informativa</h2>
-            <p>Esplora le sezioni del nostro portale per scoprire tutto sul mondo dello svapo.</p>
+            <h2>Percorso Smetti di Fumare</h2>
+            <p>Un metodo guidato e personalizzato per dire addio alle sigarette tradizionali.</p>
         </div>
 
-        <div class="info-grid">
-            <div class="info-card">
-                <div class="info-icon">💧</div>
-                <h3>I Nostri Liquidi</h3>
-                <p>Scopri una vasta gamma di aromi, basi e liquidi pronti delle migliori marche certificate.</p>
-                <a href="liquidi.html" class="btn-link">Scopri di più</a>
+        <div class="percorso-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Analisi del Fumatore</h3>
+                <p>Valutiamo insieme le tue abitudini attuali per definire il fabbisogno di nicotina iniziale ed evitare crisi di astinenza.</p>
             </div>
 
-            <div class="info-card">
-                <div class="info-icon">🛠️</div>
-                <h3>Hardware & Kit</h3>
-                <p>Dalle Pod Mod ai sistemi avanzati, abbiamo il dispositivo perfetto per ogni tipo di svapatore.</p>
-                <a href="hardware.html" class="btn-link">Guida hardware</a>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Scelta dell'Hardware</h3>
+                <p>Ti consigliamo il dispositivo più adatto (Pod Mod o Starter Kit) per replicare il "tiro" della sigaretta a cui sei abituato.</p>
             </div>
 
-            <div class="info-card">
-                <div class="info-icon">📑</div>
-                <h3>Servizi in Negozio</h3>
-                <p>Offriamo servizi e consulenze per smettere di fumare e iniziare lo svapo in modo sicuro e personalizzato.</p>
-                <a href="percorso.html" class="btn-link">Vedi servizi</a>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Test degli Aromi</h3>
+                <p>Troviamo il gusto perfetto per te: dai tabaccosi secchi ai fruttati freschi, affinché lo svapo sia un piacere.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Scalaggio Graduale</h3>
+                <p>Pianifichiamo una riduzione mensile della nicotina fino ad arrivare a zero, liberandoti dalla dipendenza fisica.</p>
             </div>
         </div>
+
+        <section class="cta-section">
+            <h3>Prenota la tua Consulenza GRATUITA</h3>
+            <p>Non affrontare questo percorso da solo. Il nostro team ti aspetta in negozio per una guida passo dopo passo.</p>
+            <a href="contatti.html?servizio=smetti-fumare" class="btn-consulenza">Prenota Ora</a>
+        </section>
     </main>
 
     <footer>

@@ -3,82 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Svapoweb Roma Centocelle - La tua guida nel mondo dello svapo</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Fake News - Svapoweb Roma Centocelle</title>
+    <style>
+        /* Reset e base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #000;
+            padding: 1rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        h1.site-title {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+
+        .text-white { color: #ffffff; }
+        .text-orange { color: #ff6600; }
+
+        /* Menu Hamburger Responsive */
+        nav {
+            background-color: #1a1a1a;
+            width: 100%;
+            position: relative;
+            z-index: 1000;
+        }
+
+        /* --- STILE MENU UNIFORMATO (Standard index.html) --- */
+nav {
+    background-color: #1a1a1a;
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+}
+
+.menu-toggle { display: none; }
+
+.hamburger {
+    display: block;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    background: #222;
+}
+
+.menu {
+    display: none;
+    list-style: none;
+    width: 100%;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.90rem; /* Font size coerente */
+    font-weight: bold;
+    transition: 0.3s;
+    border-bottom: 1px solid #333;
+}
+
+.menu li a:hover {
+    background-color: #ff6600;
+}
+
+#menu-btn:checked ~ .menu { display: block; }
+
+/* Desktop View (sopra i 992px) */
+@media (min-width: 992px) {
+    .hamburger { display: none; }
+    .menu {
+        display: flex !important;
+        justify-content: center;
+    }
+    .menu li { border: none; }
+    .menu li a {
+        border-bottom: none;
+        padding: 15px 25px;
+    }
+}
+        .menu-toggle { display: none; }
+
+        .hamburger {
+            display: block;
+            padding: 15px;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+            background: #222;
+        }
+
+        .menu {
+            display: none;
+            list-style: none;
+            width: 100%;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            transition: 0.3s;
+            border-bottom: 1px solid #333;
+        }
+
+        .menu li a:hover { background-color: #ff6600; }
+
+        #menu-btn:checked ~ .menu { display: block; }
+
+        /* Contenuto Fake News */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .warning-box {
+            background-color: #fff;
+            border-left: 5px solid #ff0000;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Card System */
+        .fake-news-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            padding: 12px 20px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .card-header.fake { background-color: #e74c3c; }
+        .card-header.truth { background-color: #2ecc71; }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body p {
+            margin-bottom: 10px;
+        }
+
+        .truth-section {
+            border-top: 2px dashed #eee;
+            background-color: #f9fffb;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: #ff6600;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Desktop Adjustment */
+        @media (min-width: 992px) {
+            .hamburger { display: none; }
+            .menu {
+                display: flex !important;
+                justify-content: center;
+            }
+            .menu li a { border: none; padding: 15px 25px; }
+            .fake-news-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-    <nav class="nav-container">
-        <div class="hamburger" id="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="Logo" class="logo-placeholder">
+            <h1 class="site-title">
+                <span class="text-white">SVAPOWEB</span> 
+                <span class="text-orange">ROMA CENTOCELLE</span>
+            </h1>
         </div>
+    </header>
 
-         <div class="logo">
-            <a href="index.html">SVAPOWEB<span><span>ROMA CENTOCELLE</span></a>
-        </div>
-        </div>
-
-        <ul id="main-menu" class="menu">
+    <nav>
+        <input type="checkbox" id="menu-btn" class="menu-toggle">
+        <label for="menu-btn" class="hamburger">☰ MENU</label>
+        
+        <ul class="menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="cose-da-sapere.html">Cose da sapere</a></li>
             <li><a href="fake-news.html">Fake news</a></li>
+            <li><a href="extra.html">Extra</a></li>
+            <li><a href="servizi-admiral.html">Servizi Admiral Pay</a></li>
             <li><a href="news.html">News</a></li>
             <li><a href="dove-siamo.html">Dove siamo</a></li>
             <li><a href="contatti.html">Contatti</a></li>
-            <li><a href="extra.html">Extra</a></li>
-            <li><a href="servizi-admiral.html">Servizi Admiral Pay</a></li>
         </ul>
     </nav>
-</header>
-
 
     <main class="container">
-        <h1>Debunking: <span style="color: rgb(4, 190, 103);">Verità</span> vs <span style="color: red;">Fake News</span></h1>
-        <h3>In questa sezione analizziamo le bufale più comuni che circolano sul mondo dello svapo.</h3>
-<h4><span style="color: red;">Nota importante:</span> Essere meno dannoso non significa "innocuo". L'ideale resta sempre non inalare nulla se non aria pulita, 
-    ma per un fumatore lo svapo rappresenta uno strumento di riduzione del rischio enorme.</h4>
-        <section class="fake-news-grid">
+        <div class="page-header">
+            <h2>Debunking: <span style="color: #2ecc71;">Verità</span> vs <span style="color: #e74c3c;">Fake News</span></h2>
+            <p class="intro">Analizziamo le bufale più comuni che circolano sul mondo dello svapo.</p>
+        </div>
+
+        <div class="warning-box">
+            <strong><span style="color: red;">Nota importante:</span></strong> Essere meno dannoso non significa "innocuo". L'ideale resta sempre non inalare nulla se non aria pulita, ma per un fumatore lo svapo rappresenta uno strumento di riduzione del rischio enorme.
+        </div>
+
+        <div class="fake-news-grid">
             <div class="card">
                 <div class="card-header fake">❌ LA FAKE NEWS</div>
                 <div class="card-body">
                     <p><strong>"Lo svapo fa venire l'acqua nei polmoni"</strong></p>
-                    <p>È forse la bufala più iconica. L'idea nasce dal pensiero logico (ma errato) che, inalando vapore, questo si condensi trasformandosi in acqua all'interno dei polmoni."</p>
+                    <p>L'idea nasce dal pensiero logico (ma errato) che il vapore si condensi in acqua nei polmoni.</p>
                 </div>
                 <div class="card-header truth">✅ LA VERITÀ</div>
-                <div class="card-body">
-                    <p>I polmoni sono già organi umidi e sono perfettamente in grado di assorbire e gestire la piccola quantità di vapore (composto principalmente da glicerina e glicole) 
-                        che viene inalata. La condizione clinica dell'acqua nei polmoni (edema polmonare) è causata da gravi problemi cardiaci o infezioni, non dallo svapo.</p>
+                <div class="card-body truth-section">
+                    <p>I polmoni gestiscono l'umidità quotidianamente. L'edema polmonare è causato da patologie cardiache o infezioni, non dallo svapo.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header fake">❌ LA FAKE NEWS</div>
                 <div class="card-body">
-                    <p>"<strong>È dannoso quanto le sigarette tradizionali."</strong></p>
+                    <p><strong>"È dannoso quanto le sigarette tradizionali."</strong></p>
                 </div>
                 <div class="card-header truth">✅ LA VERITÀ</div>
-                <div class="card-body">
-                    <p>Secondo il Ministero della Salute Inglese (Public Health England), <strong>lo svapo è il 95% meno dannoso rispetto al tabacco combusto.</strong></p>
+                <div class="card-body truth-section">
+                    <p>Secondo il <strong>Public Health England</strong>, lo svapo è il 95% meno dannoso rispetto al tabacco combusto.</p>
                 </div>
             </div>
-        </section>
 
-        <section class="fake-news-grid">
             <div class="card">
                 <div class="card-header fake">❌ LA FAKE NEWS</div>
                 <div class="card-body">
-                    <p><strong>"Il 'Popcorn Lung' (polmone da popcorn)"</strong></p>
-                    <p>Si dice spesso che lo svapo causi la bronchiolite obliterante a causa del diacetile, un aroma usato in passato per dare il sapore di burro.</p>
+                    <p><strong>"Il Popcorn Lung (polmone da popcorn)"</strong></p>
+                    <p>Si accusa il diacetile, un aroma usato in passato per il sapore di burro.</p>
                 </div>
                 <div class="card-header truth">✅ LA VERITÀ</div>
-                <div class="card-body">
-                    <p>Sebbene il diacetile sia stato collegato a questa malattia in operai di fabbriche di popcorn che ne inalavano quantità industriali, i livelli trovati nei vecchi liquidi da svapo erano infinitamente più bassi. Inoltre, <strong> oggi il diacetile è vietato o rimosso quasi ovunque nella produzione di liquidi certificati.</strong></p>
-                <p><strong>Curiosità:</strong> il fumo di tabacco tradizionale contiene molto più diacetile dello svapo, 
-                    ma non è mai stato collegato al "popcorn lung".</p>
+                <div class="card-body truth-section">
+                    <p>Oggi il diacetile è vietato o rimosso dai liquidi certificati. Il fumo di tabacco ne contiene molto di più, ma non è mai stato collegato a questa malattia.</p>
                 </div>
             </div>
 
@@ -86,50 +319,30 @@
                 <div class="card-header fake">❌ LA FAKE NEWS</div>
                 <div class="card-body">
                     <p><strong>"I liquidi contengono antigelo"</strong></p>
-                    <p> Questa accusa deriva dalla presenza del <strong>glicole propilenico (PG)</strong>, che è effettivamente usato in alcuni antigelo alimentari 
-                        perché meno tossico del glicole etilenico.</p>
+                    <p>Accusa dovuta alla presenza del glicole propilenico (PG).</p>
                 </div>
                 <div class="card-header truth">✅ LA VERITÀ</div>
-                <div class="card-body">
-                    <p>Il PG è una sostanza sicura, utilizzata in innumerevoli prodotti quotidiani: macchine del fumo per discoteche, 
-                        farmaci (come gli inalatori per l'asma), cosmetici e cibi. <strong>Dire che svapi antigelo è come dire che mangi veleno perché il sale da cucina contiene cloro (che è un gas tossico).</strong></p>
-                </div>
-            </div>
-        </section>
-
-        <section class="fake-news-grid">
-            <div class="card">
-                <div class="card-header fake">❌ LA FAKE NEWS</div>
-                <div class="card-body">
-                    <p><strong>"Svapare è dannoso quanto (o più) fumare"</strong></p>
-                    <p>Spesso i titoli dei giornali gridano che lo svapo è "ugualmente tossico".</p>
-                    
-                </div>
-                <div class="card-header truth">✅ LA VERITÀ</div>
-                <div class="card-body">
-                    <p>La maggior parte delle istituzioni sanitarie internazionali (come il Ministero della Salute britannico) concorda sul fatto che lo svapo 
-                        sia significativamente meno dannoso delle sigarette combuste <strong>(stimato intorno al 95% in meno).</strong> 
-                        La differenza sta nella combustione: <strong>nello svapo non brucia nulla, eliminando così catrame, monossido di carbonio e migliaia di sostanze 
-                        cancerogene derivate dal fuoco.</strong></p>
+                <div class="card-body truth-section">
+                    <p>Il PG è usato in farmaci, inalatori per l'asma e cibi. Dire che svapi antigelo è come dire che il sale da cucina è veleno perché contiene cloro.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header fake">❌ LA FAKE NEWS</div>
                 <div class="card-body">
-                    <p><strong>"La nicotina è la causa principale del cancro"</strong></p>
-                    <p>Molti pensano che la nicotina sia il "veleno" che uccide i fumatori.</p>
+                    <p><strong>"La nicotina causa il cancro"</strong></p>
                 </div>
                 <div class="card-header truth">✅ LA VERITÀ</div>
-                <div class="card-body">
-                    <p>La nicotina crea una forte dipendenza, ma non è classificata come cancerogena. 
-                        A uccidere nel fumo tradizionale sono i prodotti della combustione del tabacco e della carta. 
-                        <strong>Nello svapo, la nicotina serve a gestire l'astinenza mentre ci si allontana dalle tossine della sigaretta.</strong></p>
+                <div class="card-body truth-section">
+                    <p>La nicotina crea dipendenza ma non è cancerogena. A uccidere sono il catrame e il monossido di carbonio prodotti dalla combustione.</p>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
-    <script src="script.js"></script>
+    <footer>
+        <p>@Svapoweb Roma Centocelle - Il portale per il tuo svapo</p>
+    </footer>
+
 </body>
 </html>

@@ -1,0 +1,82 @@
+/* Stile specifico per i numeri utili ridotti */
+        .contact-details p {
+            font-size: 0.85rem; /* Ridotto rispetto al corpo del testo */
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .contact-details strong {
+            font-size: 0.75rem; /* Etichette ancora più piccole e discrete */
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            width: 90px; /* Allinea i numeri per una lettura più ordinata */
+        }
+        .contact-details p {
+    font-size: 0.70rem; /* Testo più piccolo per indirizzo e telefoni */
+    margin-bottom: 6px;
+}
+
+.contact-details strong {
+    font-size: 0.75rem; /* Etichette (Fisso, WhatsApp) molto discrete */
+    letter-spacing: 0.3px;
+}
+/* --- STILE UNIFORMATO PER TUTTI I MENU --- */
+nav {
+    background-color: #1a1a1a;
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+}
+
+.menu-toggle { display: none; }
+
+.hamburger {
+    display: block;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    background: #222;
+}
+
+.menu {
+    display: none; /* Nascosto su mobile, attivato dal checkbox */
+    list-style: none;
+    width: 100%;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.90rem; /* Dimensione corretta e uguale per tutti */
+    font-weight: bold;
+    transition: 0.3s;
+    border-bottom: 1px solid #333;
+}
+
+.menu li a:hover {
+    background-color: #ff6600;
+    color: white;
+}
+
+#menu-btn:checked ~ .menu { display: block; }
+
+/* Desktop View (sopra i 992px) */
+@media (min-width: 992px) {
+    .hamburger { display: none; }
+    .menu {
+        display: flex !important; /* Forza il flex su desktop */
+        justify-content: center;
+    }
+    .menu li { border: none; }
+    .menu li a {
+        border-bottom: none;
+        padding: 15px 25px;
+    }
+}
