@@ -34,7 +34,7 @@
         .logo-placeholder {
             width: 60px;
             height: 60px;
-            background-color: #fff; 
+            background-color: #fff; /* Sostituisci con il tuo logo */
             border-radius: 50%;
         }
 
@@ -46,15 +46,72 @@
         .text-white { color: #ffffff; }
         .text-orange { color: #ff6600; }
 
-        /* Menu */
+        /* Menu Hamburger Responsive */
         nav {
             background-color: #1a1a1a;
             width: 100%;
             position: relative;
-            z-index: 1000;
         }
+/* --- STILE MENU UNIFORMATO (Standard index.html) --- */
+nav {
+    background-color: #1a1a1a;
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+}
 
-        .menu-toggle { display: none; }
+.menu-toggle { display: none; }
+
+.hamburger {
+    display: block;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    background: #222;
+}
+
+.menu {
+    display: none;
+    list-style: none;
+    width: 100%;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.90rem; /* Font size coerente */
+    font-weight: bold;
+    transition: 0.3s;
+    border-bottom: 1px solid #333;
+}
+
+.menu li a:hover {
+    background-color: #ff6600;
+}
+
+#menu-btn:checked ~ .menu { display: block; }
+
+/* Desktop View (sopra i 992px) */
+@media (min-width: 992px) {
+    .hamburger { display: none; }
+    .menu {
+        display: flex !important;
+        justify-content: center;
+    }
+    .menu li { border: none; }
+    .menu li a {
+        border-bottom: none;
+        padding: 15px 25px;
+    }
+}
+        .menu-toggle {
+            display: none;
+        }
 
         .hamburger {
             display: block;
@@ -72,25 +129,29 @@
             width: 100%;
         }
 
+        .menu li {
+            border-bottom: 1px solid #333;
+        }
+
         .menu li a {
             display: block;
             padding: 15px;
             color: white;
             text-decoration: none;
             text-align: center;
-            font-size: 0.90rem;
-            font-weight: bold;
             transition: 0.3s;
-            border-bottom: 1px solid #333;
         }
 
         .menu li a:hover {
             background-color: #ff6600;
         }
 
-        #menu-btn:checked ~ .menu { display: block; }
+        /* Logica apertura menu su mobile */
+        #menu-btn:checked ~ .menu {
+            display: block;
+        }
 
-        /* Hero Section */
+        /* Hero Section (Parte Centrale) */
         .hero {
             height: 80vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
@@ -117,13 +178,6 @@
             transform: scale(1.1);
         }
 
-        /* Sezione Recensioni */
-        .reviews-container {
-            background-color: #000000;
-            padding: 60px 5%;
-            text-align: center;
-        }
-
         /* Footer */
         footer {
             background-color: #000;
@@ -140,10 +194,8 @@
                 display: flex !important;
                 justify-content: center;
             }
-            .menu li { border: none; }
-            .menu li a {
-                border-bottom: none;
-                padding: 15px 25px;
+            .menu li {
+                border: none;
             }
         }
     </style>
@@ -179,10 +231,6 @@
     <main class="hero">
         <a href="cose-da-sapere.html" class="btn-inizia">Inizia qui</a>
     </main>
-
-    <section class="reviews-container">
-        <script defer async src='https://cdn.trustindex.io/loader.js?b5fd49664a815967b1267e91b0e'></script>
-    </section>
 
     <footer>
         <p>@Svapoweb Roma Centocelle - Il portale per il tuo svapo</p>
