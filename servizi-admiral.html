@@ -17,7 +17,7 @@
             background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
-            font-size: 0.92rem; /* Font ridotto come richiesto precedentemente */
+            font-size: 0.92rem;
         }
 
         /* Header */
@@ -42,7 +42,6 @@
         .logo-placeholder {
             width: 60px;
             height: 60px;
-            background-color: #fff;
             border-radius: 50%;
         }
 
@@ -54,84 +53,82 @@
         .text-white { color: #ffffff; }
         .text-orange { color: #ff6600; }
 
-        /* Menu */
+        .social-icons {
+            position: absolute; 
+            top: 10px; 
+            left: 15px; 
+            display: flex; 
+            gap: 10px;
+        }
+
+        .social-icons img {
+            width: 30px; 
+            height: 30px;
+        }
+
+        /* --- MENU UNIFORMATO E FUNZIONANTE --- */
         nav {
             background-color: #1a1a1a;
             width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-/* --- STILE MENU UNIFORMATO (Standard index.html) --- */
-nav {
-    background-color: #1a1a1a;
-    width: 100%;
-    position: relative;
-    z-index: 1000;
-}
 
-.menu-toggle { display: none; }
+        .menu-toggle { display: none; }
 
-.hamburger {
-    display: block;
-    padding: 15px;
-    color: white;
-    cursor: pointer;
-    text-align: center;
-    font-weight: bold;
-    background: #222;
-}
+        .hamburger {
+            display: block;
+            padding: 15px;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+            background: #222;
+            user-select: none;
+        }
 
-.menu {
-    display: none;
-    list-style: none;
-    width: 100%;
-}
-
-.menu li a {
-    display: block;
-    padding: 15px;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    font-size: 0.90rem; /* Font size coerente */
-    font-weight: bold;
-    transition: 0.3s;
-    border-bottom: 1px solid #333;
-}
-
-.menu li a:hover {
-    background-color: #ff6600;
-}
-
-#menu-btn:checked ~ .menu { display: block; }
-
-/* Desktop View (sopra i 992px) */
-@media (min-width: 992px) {
-    .hamburger { display: none; }
-    .menu {
-        display: flex !important;
-        justify-content: center;
-    }
-    .menu li { border: none; }
-    .menu li a {
-        border-bottom: none;
-        padding: 15px 25px;
-    }
-}
         .menu {
+            display: none; /* Nascosto di default su mobile */
             list-style: none;
-            display: flex;
-            justify-content: center;
+            width: 100%;
+            padding: 0;
         }
 
         .menu li a {
             display: block;
-            padding: 15px 25px;
+            padding: 15px;
             color: white;
             text-decoration: none;
-            font-size: 0.88rem;
+            text-align: center;
+            font-size: 0.90rem;
+            font-weight: bold;
             transition: 0.3s;
+            border-bottom: 1px solid #333;
         }
 
-        .menu li a:hover { background-color: #ff6600; }
+        .menu li a:hover {
+            background-color: #ff6600;
+        }
+
+        /* Mostra menu quando checkbox è selezionata */
+        #menu-btn:checked ~ .menu { 
+            display: block; 
+        }
+
+        /* Desktop View (sopra i 992px) */
+        @media (min-width: 992px) {
+            .hamburger { display: none; }
+            .menu {
+                display: flex !important; /* Sempre visibile su desktop */
+                justify-content: center;
+            }
+            .menu li { border: none; }
+            .menu li a {
+                border-bottom: none;
+                padding: 15px 25px;
+            }
+        }
 
         /* Contenuto Admiral Pay */
         .container {
@@ -150,24 +147,22 @@ nav {
             border-bottom: 5px solid #ff6600;
         }
 
-        /* Stile per l'immagine cliccabile */
         .image-container {
             text-align: center;
             margin-bottom: 40px;
         }
 
         .img-preview {
-            max-width: 300px; /* Dimensione piccola in pagina */
+            max-width: 300px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s;
             cursor: pointer;
             border: 2px solid #ff6600;
         }
 
         .img-preview:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(255, 102, 0, 0.3);
         }
 
         .img-caption {
@@ -177,7 +172,6 @@ nav {
             margin-top: 10px;
         }
 
-        /* Griglia Servizi */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -194,18 +188,12 @@ nav {
 
         .service-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
         
-        .service-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
-
         footer {
             background-color: #000;
             color: #ff6600;
             padding: 2rem;
             text-align: center;
             margin-top: 50px;
-        }
-
-        @media (max-width: 992px) {
-            .menu { flex-direction: column; }
         }
     </style>
 </head>
@@ -220,33 +208,31 @@ nav {
             </h1>
         </div>
 
-     <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 10px;">
-    <a href="https://www.facebook.com/profile.php?id=61571105600853&locale=it_IT" target="_blank">
-        <img src="img/icona_facebook.png" alt="Facebook" style="width: 30px; height: 30px; transition: 0.3s;">
-    </a>
-    <a href="https://www.instagram.com/IL_TUO_PROFILO" target="_blank">
-        <img src="img/icona_instagram.png" alt="Instagram" style="width: 30px; height: 30px; transition: 0.3s;">
-    </a>
-</div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61571105600853" target="_blank">
+                <img src="img/icona_facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/IL_TUO_PROFILO" target="_blank">
+                <img src="img/icona_instagram.png" alt="Instagram">
+            </a>
+        </div>
     </header>
 
-
     <nav>
-    <input type="checkbox" id="menu-btn" class="menu-toggle">
-    
-    <label for="menu-btn" class="hamburger">☰ MENU</label>
+        <input type="checkbox" id="menu-btn" class="menu-toggle">
+        <label for="menu-btn" class="hamburger">☰ MENU</label>
 
-    <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cose-da-sapere.html">Cose da sapere</a></li>
-        <li><a href="fake-news.html">Fake news</a></li>
-        <li><a href="extra.html">Extra</a></li>
-        <li><a href="servizi-admiral.html">Servizi Admiral Pay</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="dove-siamo.html">Dove siamo</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-    </ul>
-</nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cose-da-sapere.html">Cose da sapere</a></li>
+            <li><a href="fake-news.html">Fake news</a></li>
+            <li><a href="extra.html">Extra</a></li>
+            <li><a href="servizi-admiral.html">Servizi Admiral Pay</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="dove-siamo.html">Dove siamo</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
 
     <main class="container">
         <div class="admiral-banner">
@@ -265,25 +251,22 @@ nav {
             <div class="service-card">
                 <span class="service-icon">📄</span>
                 <h3>Pagamento Bollettini</h3>
-                <p>Bollettini postali (bianchi e premarcati), MAV e RAV.</p>
+                <p>Bollettini postali, MAV e RAV.</p>
             </div>
-
             <div class="service-card">
                 <span class="service-icon">🏛️</span>
                 <h3>PagoPA</h3>
-                <p>Tasse, mense scolastiche, multe e ticket sanitari.</p>
+                <p>Tasse, mense, multe e ticket.</p>
             </div>
-
             <div class="service-card">
                 <span class="service-icon">📱</span>
                 <h3>Ricariche</h3>
-                <p>Telefoniche, internazionali e PayTV (Sky, DAZN).</p>
+                <p>Telefoniche e PayTV.</p>
             </div>
-
             <div class="service-card">
                 <span class="service-icon">🎟️</span>
                 <h3>Gift Card</h3>
-                <p>Amazon, Netflix, PlayStation, Xbox e molti altri.</p>
+                <p>Amazon, Netflix, PlayStation.</p>
             </div>
         </div>
     </main>
@@ -291,6 +274,14 @@ nav {
     <footer>
         <p>@Svapoweb Roma Centocelle - Il portale per il tuo svapo</p>
     </footer>
+
+    <script>
+        document.querySelectorAll('.menu li a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu-btn').checked = false;
+            });
+        });
+    </script>
 
 </body>
 </html>
