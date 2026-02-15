@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servizi Admiral Pay - Svapoweb Roma Centocelle</title>
     <style>
+
         /* Reset e base */
         * {
             margin: 0;
@@ -17,7 +18,7 @@
             background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
-            font-size: 0.92rem; /* Font ridotto come richiesto precedentemente */
+            font-size: 0.92rem;
         }
 
         /* Header */
@@ -54,84 +55,66 @@
         .text-white { color: #ffffff; }
         .text-orange { color: #ff6600; }
 
-        /* Menu */
+        /* --- MENU UNIFORMATO --- */
         nav {
             background-color: #1a1a1a;
             width: 100%;
+            position: relative;
+            z-index: 1000;
         }
-/* --- STILE MENU UNIFORMATO (Standard index.html) --- */
-nav {
-    background-color: #1a1a1a;
-    width: 100%;
-    position: relative;
-    z-index: 1000;
-}
 
-.menu-toggle { display: none; }
+        .menu-toggle { display: none; }
 
-.hamburger {
-    display: block;
-    padding: 15px;
-    color: white;
-    cursor: pointer;
-    text-align: center;
-    font-weight: bold;
-    background: #222;
-}
+        .hamburger {
+            display: block;
+            padding: 15px;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+            background: #222;
+        }
 
-.menu {
-    display: none;
-    list-style: none;
-    width: 100%;
-}
-
-.menu li a {
-    display: block;
-    padding: 15px;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    font-size: 0.90rem; /* Font size coerente */
-    font-weight: bold;
-    transition: 0.3s;
-    border-bottom: 1px solid #333;
-}
-
-.menu li a:hover {
-    background-color: #ff6600;
-}
-
-#menu-btn:checked ~ .menu { display: block; }
-
-/* Desktop View (sopra i 992px) */
-@media (min-width: 992px) {
-    .hamburger { display: none; }
-    .menu {
-        display: flex !important;
-        justify-content: center;
-    }
-    .menu li { border: none; }
-    .menu li a {
-        border-bottom: none;
-        padding: 15px 25px;
-    }
-}
         .menu {
+            display: none; /* Nasconde il menu su mobile di default */
             list-style: none;
-            display: flex;
-            justify-content: center;
+            width: 100%;
         }
 
         .menu li a {
             display: block;
-            padding: 15px 25px;
+            padding: 15px;
             color: white;
             text-decoration: none;
-            font-size: 0.88rem;
+            text-align: center;
+            font-size: 0.90rem;
+            font-weight: bold;
             transition: 0.3s;
+            border-bottom: 1px solid #333;
         }
 
-        .menu li a:hover { background-color: #ff6600; }
+        .menu li a:hover {
+            background-color: #ff6600;
+        }
+
+        /* LOGICA DI APERTURA: solo quando la checkbox è spuntata */
+        #menu-btn:checked ~ .menu { 
+            display: block; 
+        }
+
+        /* Desktop View (sopra i 992px) */
+        @media (min-width: 992px) {
+            .hamburger { display: none; }
+            .menu {
+                display: flex !important;
+                justify-content: center;
+            }
+            .menu li { border: none; }
+            .menu li a {
+                border-bottom: none;
+                padding: 15px 25px;
+            }
+        }
 
         /* Contenuto Admiral Pay */
         .container {
@@ -150,14 +133,13 @@ nav {
             border-bottom: 5px solid #ff6600;
         }
 
-        /* Stile per l'immagine cliccabile */
         .image-container {
             text-align: center;
             margin-bottom: 40px;
         }
 
         .img-preview {
-            max-width: 300px; /* Dimensione piccola in pagina */
+            max-width: 300px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             transition: transform 0.3s, box-shadow 0.3s;
@@ -177,7 +159,6 @@ nav {
             margin-top: 10px;
         }
 
-        /* Griglia Servizi */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -193,7 +174,6 @@ nav {
         }
 
         .service-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
-        
         .service-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
 
         footer {
@@ -203,94 +183,4 @@ nav {
             text-align: center;
             margin-top: 50px;
         }
-
-        @media (max-width: 992px) {
-            .menu { flex-direction: column; }
-        }
     </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo-container">
-            <img src="img/logo.jpeg" alt="Logo" class="logo-placeholder">
-            <h1 class="site-title">
-                <span class="text-white">SVAPOWEB</span> 
-                <span class="text-orange">ROMA CENTOCELLE</span>
-            </h1>
-        </div>
-
-     <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 10px;">
-    <a href="https://www.facebook.com/profile.php?id=61571105600853&locale=it_IT" target="_blank">
-        <img src="img/icona_facebook.png" alt="Facebook" style="width: 30px; height: 30px; transition: 0.3s;">
-    </a>
-    <a href="https://www.instagram.com/IL_TUO_PROFILO" target="_blank">
-        <img src="img/icona_instagram.png" alt="Instagram" style="width: 30px; height: 30px; transition: 0.3s;">
-    </a>
-</div>
-    </header>
-
-
-    <nav>
-    <input type="checkbox" id="menu-btn" class="menu-toggle">
-    
-    <label for="menu-btn" class="hamburger">☰ MENU</label>
-
-    <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cose-da-sapere.html">Cose da sapere</a></li>
-        <li><a href="fake-news.html">Fake news</a></li>
-        <li><a href="extra.html">Extra</a></li>
-        <li><a href="servizi-admiral.html">Servizi Admiral Pay</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="dove-siamo.html">Dove siamo</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-    </ul>
-</nav>
-
-    <main class="container">
-        <div class="admiral-banner">
-            <h2>Punto Servizi Admiral Pay</h2>
-            <p>Non solo svapo! Da noi puoi gestire i tuoi pagamenti in modo veloce e sicuro.</p>
-        </div>
-
-        <div class="image-container">
-            <a href="img/servizi-admiral.webp" target="_blank">
-                <img src="img/servizi-admiral.webp" alt="Tabella Servizi Admiral Pay" class="img-preview">
-            </a>
-            <span class="img-caption">Clicca sull'immagine per ingrandirla</span>
-        </div>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <span class="service-icon">📄</span>
-                <h3>Pagamento Bollettini</h3>
-                <p>Bollettini postali (bianchi e premarcati), MAV e RAV.</p>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">🏛️</span>
-                <h3>PagoPA</h3>
-                <p>Tasse, mense scolastiche, multe e ticket sanitari.</p>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">📱</span>
-                <h3>Ricariche</h3>
-                <p>Telefoniche, internazionali e PayTV (Sky, DAZN).</p>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">🎟️</span>
-                <h3>Gift Card</h3>
-                <p>Amazon, Netflix, PlayStation, Xbox e molti altri.</p>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>@Svapoweb Roma Centocelle - Il portale per il tuo svapo</p>
-    </footer>
-
-</body>
-</html>
