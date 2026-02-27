@@ -1,0 +1,26 @@
+<div class="info-grid">
+            <div class="info-card"> ... </div>
+
+            <div class="info-card"> ... </div>
+
+            <div class="info-card">
+                <div class="info-icon">📑</div>
+                <h3>Servizi in Negozio</h3>
+                <p>Offriamo servizi e consulenze per smettere di fumare e iniziare lo svapo in modo sicuro e personalizzato.</p>
+                <a href="percorso.html" class="btn-link">Vedi servizi</a>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">⭐</div>
+                <h3>Recensioni & Feedback</h3>
+                <p>La vostra opinione conta! Leggi cosa dicono di noi i nostri clienti o lascia la tua recensione.</p>
+                <a href="recensioni.html" class="btn-link">Leggi tutto</a>
+            </div>
+            </div> ```
+
+### Personalizzazione rapida:
+* **Icona:** Cambia l'emoji `⭐` con quella che preferisci.
+* **Titolo:** Modifica il testo dentro `<h3>`.
+* **Descrizione:** Modifica il testo dentro `<p>`.
+* **Link:** Cambia `href="recensioni.html"` con la pagina corretta a cui vuoi puntare.
+
