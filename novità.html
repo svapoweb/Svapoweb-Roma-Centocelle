@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Svapoweb Roma Centocelle</title>
+    <title>Informazioni - Svapoweb Roma Centocelle</title>
     <style>
-        /* Reset base */
+        /* Reset e base coerenti con il resto del sito */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
         }
 
         /* Header */
@@ -35,11 +41,11 @@
         .logo-placeholder {
             width: 60px;
             height: 60px;
-            background-color: #fff; /* Sostituisci con il tuo logo */
+            background-color: #fff;
             border-radius: 50%;
         }
 
-        h1 {
+        h1.site-title {
             font-size: 1.8rem;
             text-transform: uppercase;
         }
@@ -47,11 +53,12 @@
         .text-white { color: #ffffff; }
         .text-orange { color: #ff6600; }
 
-        /* Menu Hamburger Responsive */
+        /* Menu di Navigazione */
         nav {
             background-color: #1a1a1a;
             width: 100%;
             position: relative;
+            z-index: 1000;
         }
 /* --- STILE MENU UNIFORMATO (Standard index.html) --- */
 nav {
@@ -110,9 +117,7 @@ nav {
         padding: 15px 25px;
     }
 }
-        .menu-toggle {
-            display: none;
-        }
+        .menu-toggle { display: none; }
 
         .hamburger {
             display: block;
@@ -130,10 +135,6 @@ nav {
             width: 100%;
         }
 
-        .menu li {
-            border-bottom: 1px solid #333;
-        }
-
         .menu li a {
             display: block;
             padding: 15px;
@@ -141,42 +142,92 @@ nav {
             text-decoration: none;
             text-align: center;
             transition: 0.3s;
+            border-bottom: 1px solid #333;
         }
 
-        .menu li a:hover {
-            background-color: #ff6600;
+        .menu li a:hover { background-color: #ff6600; }
+
+        #menu-btn:checked ~ .menu { display: block; }
+
+        /* Contenuto Principale con Box Info (stile news.html/cose-da-sapere.html) */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        /* Logica apertura menu su mobile */
-        #menu-btn:checked ~ .menu {
-            display: block;
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
-        /* Hero Section (Parte Centrale) */
-        .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('img/panoramica_negozio.webp') no-repeat center center/cover;
+        .page-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        /* Griglia dei Box Informativi */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-top: 4px solid #ff6600;
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: #fff0e6;
+            padding: 15px;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .btn-inizia {
-            background-color: #ff6600;
-            color: white;
-            padding: 18px 40px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            transition: transform 0.3s, background-color 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        .info-card h3 {
+            color: #000;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
         }
 
-        .btn-inizia:hover {
+        .info-card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .btn-link {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn-link:hover {
             background-color: #e65c00;
-            transform: scale(1.1);
         }
 
         /* Footer */
@@ -185,19 +236,17 @@ nav {
             color: #ff6600;
             padding: 2rem;
             text-align: center;
-            font-size: 0.9rem;
+            margin-top: 50px;
         }
 
-        /* Desktop View */
+        /* Desktop Adjustment */
         @media (min-width: 992px) {
             .hamburger { display: none; }
             .menu {
                 display: flex !important;
                 justify-content: center;
             }
-            .menu li {
-                border: none;
-            }
+            .menu li a { border: none; padding: 15px 25px; }
         }
     </style>
 </head>
@@ -206,12 +255,12 @@ nav {
     <header>
         <div class="logo-container">
             <img src="img/logo.jpeg" alt="Logo" class="logo-placeholder">
-            <h1>
+            <h1 class="site-title">
                 <span class="text-white">SVAPOWEB</span> 
                 <span class="text-orange">ROMA CENTOCELLE</span>
             </h1>
         </div>
-        <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 10px;">
+         <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 10px;">
     <a href="https://www.facebook.com/profile.php?id=61571105600853&locale=it_IT" target="_blank">
         <img src="img/icona_facebook.png" alt="Facebook" style="width: 30px; height: 30px; transition: 0.3s;">
     </a>
@@ -229,7 +278,6 @@ nav {
             <li><a href="index.html">Home</a></li>
             <li><a href="cose-da-sapere.html">Cose da sapere</a></li>
             <li><a href="fake-news.html">Fake news</a></li>
-            <li><a href="novità.html">Novità</a></li>
             <li><a href="extra.html">Extra</a></li>
             <li><a href="servizi-admiral.html">Servizi Admiral Pay</a></li>
             <li><a href="info.html">Info</a></li>
@@ -238,8 +286,40 @@ nav {
         </ul>
     </nav>
 
-    <main class="hero">
-        <a href="cose-da-sapere.html" class="btn-inizia">Inizia qui</a>
+    <main class="container">
+        <div class="page-header">
+            <h2>Area Informativa</h2>
+            <p>Esplora le sezioni del nostro portale per scoprire tutto sul mondo dello svapo.</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">💧</div>
+                <h3>Guida ai Liquidi</h3>
+                <p>Scopri una vasta gamma di aromi, basi e liquidi pronti delle migliori marche certificate.</p>
+                <a href="liquidi.html" class="btn-link">Scopri di più</a>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">🛠️</div>
+                <h3>Hardware & Kit</h3>
+                <p>Dalle Pod Mod ai sistemi avanzati, abbiamo il dispositivo perfetto per ogni tipo di svapatore.</p>
+                <a href="hardware.html" class="btn-link">Guida hardware</a>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">📑</div>
+                <h3>Servizi in Negozio</h3>
+                <p>Offriamo servizi e consulenze per smettere di fumare e iniziare lo svapo in modo sicuro e personalizzato.</p>
+                <a href="percorso.html" class="btn-link">Vedi servizi</a>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">⭐</div>
+                <h3>Lo Svapo...!!</h3>
+                <p>Questo sconosciuto..per toglierti dubbi e curiosità clicca e leggi questa breve guida</p>
+                <a href="document/Guida_allo_Svapo.pdf" class="btn-link">Leggi tutto</a>
+            </div>
+        </div>
     </main>
 
     <footer>
